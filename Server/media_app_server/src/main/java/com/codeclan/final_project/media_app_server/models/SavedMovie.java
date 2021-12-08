@@ -13,12 +13,12 @@ public class SavedMovie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonIgnoreProperties(value = "saved_movies")
+    @JsonIgnoreProperties(value = "savedMovies")
     @ManyToOne
     @JoinColumn(name = "saved_movie_id", nullable = false)
     private Movie movie;
 
-    @JsonIgnoreProperties(value = "saved_movies")
+    @JsonIgnoreProperties(value = "savedMovies")
     @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinColumn(name = "saved_movie_list_id", nullable = false)
