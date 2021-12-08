@@ -3,18 +3,20 @@ package com.codeclan.final_project.media_app_server.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "movies")
 public class Movie {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-//    @JsonIgnoreProperties(value="movies")
-    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
-    @JoinColumn(name = "movieId", nullable = false)
 
+    @JsonIgnoreProperties(value="movie")
+    @OneToMany(mappedBy = "movie", fetch = FetchType.LAZY)
+    private List<SavedMovie> savedMovies;
 
     @Column(name = "title")
     private String title;
@@ -39,6 +41,7 @@ public class Movie {
 
     @Column(name = "poster")
     private String poster;
+
 
     public String getPoster() {
         return poster;

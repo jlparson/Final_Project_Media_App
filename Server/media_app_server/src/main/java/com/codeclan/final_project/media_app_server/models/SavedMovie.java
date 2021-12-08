@@ -1,5 +1,7 @@
 package com.codeclan.final_project.media_app_server.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,18 +12,22 @@ public class SavedMovie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "movieId")
-    private Long movieId;
+    @JsonIgnoreProperties(value = "saved_movies")
+    @ManyToOne
+    @JoinColumn(name = "saved_movie_id", nullable = false)
+    private Movie movie;
 
-    @Column(name = "listId")
-    private Long listId;
+    @JsonIgnoreProperties(value = "saved_movies")
+    @ManyToOne
+    @JoinColumn(name = "saved_movie_list_id", nullable = false)
+    private MovieList movieList;
 
     @Column(name = "watched")
     private boolean watched;
 
-    public SavedMovie(Long movieId, Long listId, boolean watched) {
-        this.movieId = movieId;
-        this.listId = listId;
+    public SavedMovie(Movie movie, MovieList movieList, boolean watched) {
+        this.movie = movie;
+        this.movieList = movieList;
         this.watched = watched;
     }
 
@@ -37,20 +43,20 @@ public class SavedMovie {
         this.id = id;
     }
 
-    public Long getMovieId() {
-        return movieId;
+    public Movie getMovie() {
+        return movie;
     }
 
-    public void setMovieId(Long movieId) {
-        this.movieId = movieId;
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 
-    public Long getListId() {
-        return listId;
+    public MovieList getMovieList() {
+        return movieList;
     }
 
-    public void setListId(Long listId) {
-        this.listId = listId;
+    public void setMovieList(MovieList movieList) {
+        this.movieList = movieList;
     }
 
     public boolean isWatched() {

@@ -20,4 +20,5 @@ public class MovieListController {
     public ResponseEntity<List<MovieList>> getMovieList(){
         return new ResponseEntity<>(movieListRepository.findAll(), HttpStatus.OK);
     }
+
 }

@@ -1,5 +1,7 @@
 package com.codeclan.final_project.media_app_server.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +17,8 @@ public class MovieList {
     @Column(name = "listName")
     private String listName;
 
-    @Column(name = "savedMovies")
+    @JsonIgnoreProperties(value="movieList")
+    @OneToMany(mappedBy = "movieList", fetch = FetchType.LAZY)
     private List<SavedMovie> savedMovies;
 
     public MovieList(String listName) {

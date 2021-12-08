@@ -18,17 +18,27 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args) {
-        Movie redNotice = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021", "This is a fun action film, blah blah blah", "Netflix, Amazon", "moreinfolink", "posterlink");
+        Movie redNotice = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
+                "This is a fun action film, blah blah blah", "Netflix, Amazon", "moreinfolink",
+                "posterlink");
         movieRepository.save(redNotice);
 
-        Movie blueNotice = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021", "This is a fun action film, blah blah blah", "Netflix, Amazon", "moreinfolink", "posterlink2");
-        movieRepository.save(blueNotice);
+        Movie freeGuy = new Movie("Free Guy", "Comedy", 1.30, "October 10th, 2021",
+                "A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.", "Netflix, Amazon", "moreinfolink", "/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg");
+        movieRepository.save(freeGuy);
 
-        Movie greenNotice = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021", "This is a fun action film, blah blah blah", "Netflix, Amazon", "moreinfolink", "posterlink3");
-        movieRepository.save(greenNotice);
+        Movie shangChi = new Movie("Shang-Chi and the Legend of the Ten Rings", "Fantasy", 1.30, "October 10th, 2021",
+                "Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.",
+                "Netflix, Amazon", "moreinfolink", "/1BIoJGKbXjdFDAqUEiA2VHqkK1Z.jpg");
+        movieRepository.save(shangChi);
 
-        Movie blackNotice = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021", "This is a fun action film, blah blah blah", "Netflix, Amazon", "moreinfolink", "posterlink4");
-        movieRepository.save(blackNotice);
+        Movie armyOfThieves = new Movie("Army of Thieves", "Action", 1.30, "2021-10-27",
+                "A mysterious woman recruits bank teller Ludwig Dieter to lead a group of aspiring thieves on a top-secret heist during the early stages of the zombie apocalypse.",
+                "Netflix, Amazon", "moreinfolink", "/iPTZGFmPs7HsXHYxiuxGolihjOH.jpg");
+        movieRepository.save(armyOfThieves);
     }
+
+
+    
 
 }
