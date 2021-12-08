@@ -1,7 +1,12 @@
 package com.codeclan.final_project.media_app_server.components;
 
 import com.codeclan.final_project.media_app_server.models.Movie;
+import com.codeclan.final_project.media_app_server.models.MovieList;
+import com.codeclan.final_project.media_app_server.models.SavedMovie;
+import com.codeclan.final_project.media_app_server.repositories.MovieListRepository;
 import com.codeclan.final_project.media_app_server.repositories.MovieRepository;
+import com.codeclan.final_project.media_app_server.repositories.SavedMovieRepository;
+import org.hibernate.resource.beans.internal.FallbackBeanInstanceProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -12,6 +17,12 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     MovieRepository movieRepository;
+
+    @Autowired
+    MovieListRepository movieListRepository;
+
+    @Autowired
+    SavedMovieRepository savedMovieRepository;
 
     public DataLoader(){
 
@@ -36,9 +47,20 @@ public class DataLoader implements ApplicationRunner {
                 "A mysterious woman recruits bank teller Ludwig Dieter to lead a group of aspiring thieves on a top-secret heist during the early stages of the zombie apocalypse.",
                 "Netflix, Amazon", "moreinfolink", "/iPTZGFmPs7HsXHYxiuxGolihjOH.jpg");
         movieRepository.save(armyOfThieves);
+
+
+        MovieList favouriteMovies = new MovieList("Favourite Movies");
+        movieListRepository.save(favouriteMovies);
+
+        MovieList upcomingMovies = new MovieList("Upcoming Movies");
+        movieListRepository.save(upcomingMovies);
+
+
+        SavedMovie savedMovie = new SavedMovie(redNotice, favouriteMovies, false);
+        savedMovieRepository.save(savedMovie);
+
+
     }
 
-
-    
 
 }
