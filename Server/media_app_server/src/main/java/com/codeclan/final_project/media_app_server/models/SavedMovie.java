@@ -1,6 +1,7 @@
 package com.codeclan.final_project.media_app_server.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
@@ -19,6 +20,7 @@ public class SavedMovie {
 
     @JsonIgnoreProperties(value = "saved_movies")
     @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinColumn(name = "saved_movie_list_id", nullable = false)
     private MovieList movieList;
 

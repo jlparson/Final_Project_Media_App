@@ -33,7 +33,7 @@ public class MovieController {
         return new ResponseEntity<>(movie, HttpStatus.CREATED);
     }
 
-    @PatchMapping(value = "/pirates/{id}")
+    @PatchMapping(value = "/movies/{id}")
     public ResponseEntity<Movie> updateMovie(@RequestBody Movie movie){
         movieRepository.save(movie);
         return new ResponseEntity<>(movie, HttpStatus.OK);
