@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import{ Route, Switch } from "react-router-dom";
+// import{ Route, Switch } from "react-router-dom";
 import MovieList from "./MovieList";
+import Request from '../helpers/request';
 
 
 const ListOfMovieLists = () => {
