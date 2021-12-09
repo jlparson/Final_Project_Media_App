@@ -1,10 +1,10 @@
 import React from "react"
-import ListOfMovieLists from "../components/ListOfMovieLists";
+import MovieContainer from "./MovieContainer";
 
 
 const MainContainer = () => {
     return(
-        <ListOfMovieLists/>
+        <MovieContainer/>
     )
 }
 
