@@ -28,10 +28,11 @@ public class DataLoader implements ApplicationRunner {
 
     }
 
+
     public void run(ApplicationArguments args) {
         Movie redNotice = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
                 "This is a fun action film, blah blah blah", "Netflix, Amazon", "moreinfolink",
-                "posterlink");
+                "https://en.wikipedia.org/wiki/Red_Notice_(film)#/media/File:Red_Notice_-_film_promotional_image.jpg");
         movieRepository.save(redNotice);
 
         Movie freeGuy = new Movie("Free Guy", "Comedy", 1.30, "October 10th, 2021",
@@ -47,6 +48,11 @@ public class DataLoader implements ApplicationRunner {
                 "A mysterious woman recruits bank teller Ludwig Dieter to lead a group of aspiring thieves on a top-secret heist during the early stages of the zombie apocalypse.",
                 "Netflix, Amazon", "moreinfolink", "/iPTZGFmPs7HsXHYxiuxGolihjOH.jpg");
         movieRepository.save(armyOfThieves);
+
+        Movie movie1 = new Movie("Army of Thieves11", "new", 1.30, "2021-10-27",
+                "A mysterious woman recruits bank teller Ludwig Dieter to lead a group of aspiring thieves on a top-secret heist during the early stages of the zombie apocalypse.",
+                "1", "1", "1");
+        movieRepository.save(movie1);
 
 
         MovieList favouriteMovies = new MovieList("Favourite Movies");

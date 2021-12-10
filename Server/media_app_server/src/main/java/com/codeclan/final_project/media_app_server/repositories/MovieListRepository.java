@@ -2,6 +2,7 @@ package com.codeclan.final_project.media_app_server.repositories;
 
 import com.codeclan.final_project.media_app_server.models.MovieList;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
