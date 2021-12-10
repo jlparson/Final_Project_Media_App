@@ -23,6 +23,8 @@ function Nav() {
                 alt="Getflix Logo"
             />
 
+            <a className="nav_myLists" href="/MyLists">My Lists</a>
+
             <img
                 className="nav_avatar"
                 src="https://i.postimg.cc/VNXjgXWs/Getflix-User.png"
