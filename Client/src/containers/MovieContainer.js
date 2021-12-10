@@ -23,6 +23,10 @@ const MovieContainer = () => {
     })
 }
 
+useEffect(() => {
+    requestAll()
+}, []);
+
     
 
     return(
