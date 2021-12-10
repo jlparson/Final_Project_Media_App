@@ -15,13 +15,13 @@ public class SavedMovie {
 
     @JsonIgnoreProperties(value = "savedMovies")
     @ManyToOne
-    @JoinColumn(name = "saved_movie_id", nullable = false)
+    @JoinColumn(name = "movie_id", nullable = false)
     private Movie movie;
 
     @JsonIgnoreProperties(value = "savedMovies")
     @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @JoinColumn(name = "saved_movie_list_id", nullable = false)
+    @JoinColumn(name = "movie_list_id", nullable = false)
     private MovieList movieList;
 
     @Column(name = "watched")

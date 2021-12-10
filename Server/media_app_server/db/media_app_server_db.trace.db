@@ -2493,8 +2493,13 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	... 28 more
+<<<<<<< HEAD
 2021-12-10 11:27:27 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/jenniferparson/codeclan_work/week_14/final_project/java_spring_project/Final_Project_Media_App/Server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2021-12-10 15:53:49 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/Codeclan/Codeclan_work/Final_Project/media-app/server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> develop
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -2528,11 +2533,19 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/jenniferparson/codeclan_work/week_14/final_project/java_spring_project/Final_Project_Media_App/Server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 33 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/jenniferparson/codeclan_work/week_14/final_project/java_spring_project/Final_Project_Media_App/Server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/Codeclan/Codeclan_work/Final_Project/media-app/server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/Codeclan/Codeclan_work/Final_Project/media-app/server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]
+>>>>>>> develop
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
 	at org.h2.mvstore.FileStore.open(FileStore.java:166)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
@@ -2545,8 +2558,16 @@ Caused by: java.nio.channels.OverlappingFileLockException
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	... 28 more
+<<<<<<< HEAD
 2021-12-10 12:24:17 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/jenniferparson/codeclan_work/week_14/final_project/java_spring_project/Final_Project_Media_App/Server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2021-12-10 15:54:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SAVED_MOVIES" not found; SQL statement:
+SELECT movies.* FROM movies INNER JOIN saved_movies ON movies.id = saved_movies.movie_id WHERE saved_movies.movie_list_id = ? [42102-200]
+2021-12-10 15:58:49 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/Codeclan/Codeclan_work/Final_Project/media-app/server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> develop
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -2580,6 +2601,7 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/jenniferparson/codeclan_work/week_14/final_project/java_spring_project/Final_Project_Media_App/Server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
@@ -3423,6 +3445,13 @@ Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.I
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 33 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/jenniferparson/codeclan_work/week_14/final_project/java_spring_project/Final_Project_Media_App/Server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/Codeclan/Codeclan_work/Final_Project/media-app/server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/Codeclan/Codeclan_work/Final_Project/media-app/server/media_app_server/db/media_app_server_db.mv.db [1.4.200/7]
+>>>>>>> develop
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
 	at org.h2.mvstore.FileStore.open(FileStore.java:166)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)

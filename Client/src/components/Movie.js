@@ -7,7 +7,7 @@ const Movie = ({movie}) => {
         return <p>Can't find movie...</p>
     }
 
-    const url = "/movies/" + movie.id;
+    // const url = "/movies/" + movie.id;
 
     return(
         <>

@@ -6,29 +6,29 @@ import Request from '../helpers/request';
 
 const MovieContainer = () => {
 
-    const [movies, setMovies] = useState([]);
+    const [list1, setList1] = useState(null);
+    const [list2, setList2] = useState(null);
+    
 
     const requestAll = function() {
         const request = new Request();
-        const moviePromise = request.get('/api/movies')
-    
+        const list1Promise = request.get('/api/movieLists/1')
+        const list2Promise = request.get('/api/movieLists/2')
+            
 
-    Promise.all([moviePromise])
+    Promise.all([list1Promise, list2Promise])
     .then((data) => {
-        setMovies(data[0]);
-        })
-    }
-
-    useEffect(() => {
-        requestAll()
-    }, [])
+        setList1(data[0]);
+        setList2(data[1]);
+    })
+}
 
     
 
     return(
         <>
         <p>Movie Poster</p>
-        <MovieList movies={movies}/>
+        {list1 && list2? <MovieList list1={list1} list2={list2}/>: null}
         </>
 
     )
