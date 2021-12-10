@@ -28,6 +28,7 @@ public class DataLoader implements ApplicationRunner {
 
     }
 
+
     public void run(ApplicationArguments args) {
         Movie redNotice = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
                 "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
