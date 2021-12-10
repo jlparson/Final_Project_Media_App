@@ -11,7 +11,7 @@ const Movie = ({movie}) => {
 
     return(
         <>
-            <p>Movie: {movie.title}</p>
+            
             <img src={movie.poster} width="200" alt="movie poster" />
         </>
     )

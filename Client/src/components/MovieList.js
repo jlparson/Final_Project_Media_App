@@ -1,10 +1,12 @@
 import React from "react";
 import Movie from "./Movie";
+import "./css/MovieList.css";
 
 const MovieList = ({list1, list2}) => {
 
     const movieList1 = list1.map((movie, index) => {
         return (
+            
             <li key={index} className="list-item">
             <div className="list-item">
             <Movie movie={movie} />
@@ -15,6 +17,7 @@ const MovieList = ({list1, list2}) => {
 
     const movieList2 = list2.map((movie, index) => {
         return (
+            
             <li key={index} className="list-item">
             <div className="list-item">
             <Movie movie={movie} />
@@ -25,8 +28,8 @@ const MovieList = ({list1, list2}) => {
 
     return (
         <>
-        {movieList1}
-        {movieList2}
+        <ul>{movieList1}</ul>
+        <ul>{movieList2}</ul>
         </>
     )
 

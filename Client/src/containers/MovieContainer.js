@@ -29,7 +29,7 @@ useEffect(() => {
 
     return(
         <>
-        <p>Movie Poster</p>
+        
         {list1 && list2? <MovieList list1={list1} list2={list2}/>: null}
         </>
 

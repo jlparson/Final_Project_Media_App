@@ -52,6 +52,36 @@ public class DataLoader implements ApplicationRunner {
                 "Netflix, Amazon", "https://www.imdb.com/title/tt13024674/?ref_=nv_sr_srsg_0", "https://image.tmdb.org/t/p/original/iPTZGFmPs7HsXHYxiuxGolihjOH.jpg");
         movieRepository.save(armyOfThieves);
 
+        Movie redNotice1 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
+                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
+                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
+                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
+        movieRepository.save(redNotice1);
+
+        Movie redNotice2 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
+                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
+                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
+                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
+        movieRepository.save(redNotice2);
+
+        Movie redNotice3 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
+                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
+                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
+                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
+        movieRepository.save(redNotice3);
+
+        Movie redNotice4 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
+                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
+                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
+                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
+        movieRepository.save(redNotice4);
+
+        Movie redNotice5 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
+                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
+                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
+                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
+        movieRepository.save(redNotice5);
+
 
         MovieList favouriteMovies = new MovieList("Favourite Movies");
         movieListRepository.save(favouriteMovies);
@@ -71,6 +101,23 @@ public class DataLoader implements ApplicationRunner {
 
         SavedMovie savedMovie4 = new SavedMovie(armyOfThieves, upcomingMovies, false);
         savedMovieRepository.save(savedMovie4);
+
+        SavedMovie savedMovie5 = new SavedMovie(redNotice1, upcomingMovies,false);
+        savedMovieRepository.save(savedMovie5);
+
+        SavedMovie savedMovie6 = new SavedMovie(redNotice2, upcomingMovies,false);
+        savedMovieRepository.save(savedMovie6);
+
+        SavedMovie savedMovie7 = new SavedMovie(redNotice3, upcomingMovies,false);
+        savedMovieRepository.save(savedMovie7);
+
+        SavedMovie savedMovie8 = new SavedMovie(redNotice4, upcomingMovies,false);
+        savedMovieRepository.save(savedMovie8);
+
+        SavedMovie savedMovie9 = new SavedMovie(redNotice5, upcomingMovies,false);
+        savedMovieRepository.save(savedMovie9);
+
+
 
 
     }
