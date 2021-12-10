@@ -3,6 +3,7 @@ package com.codeclan.final_project.media_app_server.controllers;
 import com.codeclan.final_project.media_app_server.models.Movie;
 import com.codeclan.final_project.media_app_server.models.MovieList;
 import com.codeclan.final_project.media_app_server.repositories.MovieListRepository;
+import com.codeclan.final_project.media_app_server.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,9 @@ public class MovieListController {
     @Autowired
     MovieListRepository movieListRepository;
 
+    @Autowired
+    MovieRepository movieRepository;
+
     @GetMapping(value = "/movieLists")
     public ResponseEntity<List<MovieList>> getMovieList(){
         return new ResponseEntity<>(movieListRepository.findAll(), HttpStatus.OK);
@@ -23,7 +27,7 @@ public class MovieListController {
 
     @GetMapping(value = "/movieLists/{id}")
     public ResponseEntity getMovieList(@PathVariable Long id){
-        return new ResponseEntity(movieListRepository.findById(id), HttpStatus.OK);
+        return new ResponseEntity(movieRepository.findMoviesForMovieList(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/movieLists")

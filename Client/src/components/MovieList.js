@@ -1,63 +1,91 @@
 import React from "react";
 import Movie from "./Movie";
 
-const MovieList = ({movies}) => {
+const MovieList = ({list1, list2}) => {
 
+    const movieList1 = list1.map((movie, index) => {
+        return (
+            <li key={index} className="list-item">
+            <div className="list-item">
+            <Movie movie={movie} />
+            </div>
+            </li>
+        )
+    })
 
-    function displayMovies(movies){
-        try {
-            const genres = []
-            for (let movie of movies){
-                if(!genres.find(genre => genre == movie.genre)){
-                    genres.push(movie.genre)
-                }
-            }
+    const movieList2 = list2.map((movie, index) => {
+        return (
+            <li key={index} className="list-item">
+            <div className="list-item">
+            <Movie movie={movie} />
+            </div>
+            </li>
+        )
+    })
+
+    return (
+        <>
+        {movieList1}
+        {movieList2}
+        </>
+    )
+
+    }
+
+//     function displayList1(list1){
+        // try {
+        //     const genres = []
+        //     for (let movie of movies){
+        //         if(!genres.find(genre => genre == movie.genre)){
+        //             genres.push(movie.genre)
+        //         }
+        //     }
             
          
 
-            return genres.map(genre => {
+    //         return genres.map(genre => {
                 
-                // if(genres.indexOf(genre) == 0 ){
-                //     return(
-                        // this is to return random movies 
-                        // forloop on rendom moies  and dyspaly it  and not duplice
-                //     ) 
+    //             // if(genres.indexOf(genre) == 0 ){
+    //             //     return(
+    //                     // this is to return random movies 
+    //                     // forloop on rendom moies  and dyspaly it  and not duplice
+    //             //     ) 
                         
-                // }
+    //             // }
 
-                const genreMovies = movies.filter(movie => movie.genre == genre)
-                    return (
-                        <div key = {genres.indexOf(genre)}>
-                        <h3>{genre}</h3>
+    //             const genreMovies = movies.filter(movie => movie.genre == genre)
+    //                 return (
+    //                     <div key = {genres.indexOf(genre)}>
+    //                     <h3>{genre}</h3>
                     
-                        <ul key = {genres.indexOf(genre)}>
-                     {genreMovies.map(movie => { 
+    //                     <ul key = {genres.indexOf(genre)}>
+    //                  {genreMovies.map(movie => { 
                         
-                        return(
-                            <li key = {movies.indexOf(movie)}>
-                                <div><Movie movie ={movie}/></div>
-                            </li>
-                        )
-                    })
+    //                     return(
+    //                         <li key = {movies.indexOf(movie)}>
+    //                             <div><Movie movie ={movie}/></div>
+    //                         </li>
+    //                     )
+    //                 })
                 
-                    }
+    //                 }
                 
                     
-                    </ul>
-                    </div>
-            )
+    //                 </ul>
+    //                 </div>
+    //         )
 
 
 
-            }) 
+    //         }) 
 
 
 
 
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
 
 
 
@@ -93,16 +121,16 @@ const MovieList = ({movies}) => {
     // })
 
 
-    return(
-        <div>
+//     return(
+//         <div>
         
-           {displayMovies(movies)}
+//            {displayMovies(movies)}
     
-        </div>
-    )
+//         </div>
+//     )
         
         
     
-}
+// }
 
 export default MovieList;
