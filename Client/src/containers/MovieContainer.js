@@ -16,12 +16,14 @@ const MovieContainer = () => {
     Promise.all([moviePromise])
     .then((data) => {
         setMovies(data[0]);
-    })
-}
+        })
+    }
 
-useEffect(() => {
-    requestAll()
-}, [])
+    useEffect(() => {
+        requestAll()
+    }, [])
+
+    
 
     return(
         <>

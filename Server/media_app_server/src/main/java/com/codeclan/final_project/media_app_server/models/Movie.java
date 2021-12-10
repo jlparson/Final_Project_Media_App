@@ -30,7 +30,7 @@ public class Movie {
     @Column(name = "releaseDate")
     private String releaseDate;
 
-    @Column(name = "description")
+    @Column(name = "description", length=1000)
     private String description;
 
     @Column(name = "providers")
