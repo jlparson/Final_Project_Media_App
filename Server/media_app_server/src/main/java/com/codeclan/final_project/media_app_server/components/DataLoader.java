@@ -31,7 +31,7 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        // MOVIES
+//         MOVIES
         Movie redNotice = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
                 "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
                 "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
@@ -137,6 +137,8 @@ public class DataLoader implements ApplicationRunner {
         SavedMovie savedMovie4 = new SavedMovie(armyOfThieves, upcomingMovies, false);
         savedMovieRepository.save(savedMovie4);
 
+        SavedMovie savedMovie5 = new SavedMovie(venom, upcomingMovies, false);
+        savedMovieRepository.save(savedMovie5);
 
 
 
