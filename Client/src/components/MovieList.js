@@ -7,7 +7,7 @@ const MovieList = ({list1, list2}) => {
     const movieList1 = list1.map((movie, index) => {
         return (
             
-            <li key={index} className="list-item">
+            <li   key={index} className="list-item">
             <div className="list-item">
             <Movie movie={movie} />
             </div>

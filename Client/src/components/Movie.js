@@ -1,4 +1,5 @@
 import React from "react"
+import "./css/MovieList.css";
 
 
 const Movie = ({movie}) => {
@@ -12,7 +13,7 @@ const Movie = ({movie}) => {
     return(
         <>
             
-            <img src={movie.poster} width="200" alt="movie poster" />
+            <img id = "poster" src={movie.poster}  alt="movie poster" />
         </>
     )
 }

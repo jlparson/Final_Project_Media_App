@@ -1,7 +1,37 @@
 li{
     list-style: none;
+    padding: 20px;
+    
+    
+    
 }
+
+
 
 ul {
     display: flex;
+    overflow: scroll;
+    overflow-y: hidden;
+    padding: 20px;
+}
+
+ul::-webkit-scrollbar{
+    display: none;
+}
+#poster{
+    object-fit: contain;
+    width: 200px;
+    
+    
+    transition: transform 450ms;
+    
+    
+
+}
+
+#poster:hover{
+   
+    transform: scale(1.2);
+    
+    
 }
