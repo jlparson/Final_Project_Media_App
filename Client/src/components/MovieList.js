@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import Movie from "./Movie";
 import "./css/MovieList.css";
+import MovieDetail from "./MovieDetail";
 
-const MovieList = ({list1, list2, movie}) => {
+const MovieList = ({list1, list2, movie }) => {
+    const [selectedMovie, setSelectedMovie] = useState(null);
+
+    const onMovieClick = function(movie) {
+        setSelectedMovie(movie);
+        }
 
     
 
@@ -12,7 +18,7 @@ const MovieList = ({list1, list2, movie}) => {
             
             <li  movie={movie}  key={index} className="list-item">
             <div className="list-item">
-            <Movie movie={movie} />
+            <Movie  movie={movie} />
             </div>
             </li>
         )
@@ -38,6 +44,7 @@ const MovieList = ({list1, list2, movie}) => {
         <>
         <ul>{movieList1}</ul>
         <ul>{movieList2}</ul>
+        {selectedMovie ? <MovieDetail movie={selectedMovie} onMovieClick={onMovieClick}/> : null}
         </>
     )
 

@@ -1,9 +1,10 @@
 import React from 'react';
 
-const MovieDetail = () => {
+
+const MovieDetail = ({movie}) => {
     return (
         <div>
-            <p>I'm movie detail</p>
+            <p>{movie.name}</p>
         </div>
     );
 };
