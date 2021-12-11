@@ -39,8 +39,14 @@ const CuratedList = ({list1, list2, list3}) => {
 
     return (
         <>
+        <br></br><br></br><br></br>
+        <h3>Recommended</h3>
         <ul>{curatedList1}</ul>
+
+        <h3>Recently Added</h3>
         <ul>{curatedList2}</ul>
+
+        <h3>Family Friendly</h3>
         <ul>{curatedList3}</ul>
         </>
     )
