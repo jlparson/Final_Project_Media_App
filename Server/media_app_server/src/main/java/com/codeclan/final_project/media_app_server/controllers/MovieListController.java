@@ -30,6 +30,7 @@ public class MovieListController {
         return new ResponseEntity(movieRepository.findMoviesForMovieList(id), HttpStatus.OK);
     }
 
+
     @PostMapping(value = "/movieLists")
     public ResponseEntity<MovieList> postMovieList(@RequestBody MovieList movieList){
         movieListRepository.save(movieList);

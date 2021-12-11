@@ -3,6 +3,7 @@ package com.codeclan.final_project.media_app_server.controllers;
 import com.codeclan.final_project.media_app_server.models.Movie;
 import com.codeclan.final_project.media_app_server.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,12 +22,6 @@ public class MovieController {
     public ResponseEntity<List<Movie>> getAllMovies(){
         return new ResponseEntity<>(movieRepository.findAll(), HttpStatus.OK);
     }
-
-
-
-
-
-
 
     @GetMapping(value = "/movies/{id}")
     public ResponseEntity getMovie(@PathVariable Long id){
