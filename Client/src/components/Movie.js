@@ -4,6 +4,10 @@ import "./css/MovieList.css";
 
 const Movie = ({movie}) => {
 
+    const handleClick = function() {
+        console.log({movie})
+      }
+
     if(!movie){
         return <p>Can't find movie...</p>
     }
@@ -13,7 +17,7 @@ const Movie = ({movie}) => {
     return(
         <>
             
-            <img id = "poster" src={movie.poster}  alt="movie poster" />
+            <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
         </>
     )
 }

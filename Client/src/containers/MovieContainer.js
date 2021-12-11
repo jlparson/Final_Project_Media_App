@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 // import{ Route, Switch } from "react-router-dom";
 import MovieList from "../components/MovieList";
 import Request from '../helpers/request';
+import MovieDetail from "../components/MovieDetail";
 
 
 const MovieContainer = () => {
+
+    const [selectedMovie, setSelectedMovie] = useState(null);
 
     const [list1, setList1] = useState(null);
     const [list2, setList2] = useState(null);
@@ -31,8 +34,10 @@ useEffect(() => {
 
     return(
         <>
-        
+        <div>
         {list1 && list2? <MovieList list1={list1} list2={list2}/>: null}
+        </div>
+        <MovieDetail movie = {selectedMovie}/>
         </>
 
     )
