@@ -31,7 +31,7 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-//         MOVIES
+//         MOVIES (added)
         Movie redNotice = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
                 "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
                 "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
@@ -54,37 +54,6 @@ public class DataLoader implements ApplicationRunner {
                 "Netflix, Amazon", "https://www.imdb.com/title/tt13024674/?ref_=nv_sr_srsg_0", "https://image.tmdb.org/t/p/original/iPTZGFmPs7HsXHYxiuxGolihjOH.jpg");
         movieRepository.save(armyOfThieves);
 
-
-        Movie redNotice1 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
-                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
-                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
-                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
-        movieRepository.save(redNotice1);
-
-        Movie redNotice2 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
-                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
-                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
-                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
-        movieRepository.save(redNotice2);
-
-        Movie redNotice3 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
-                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
-                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
-                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
-        movieRepository.save(redNotice3);
-
-        Movie redNotice4 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
-                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
-                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
-                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
-        movieRepository.save(redNotice4);
-
-        Movie redNotice5 = new Movie("Red Notice", "Action", 1.30, "October 10th, 2021",
-                "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
-                "Netflix, Amazon", "https://www.imdb.com/title/tt7991608/",
-                "https://image.tmdb.org/t/p/original/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg");
-        movieRepository.save(redNotice5);
-
         Movie venom = new Movie("Venom: Let There Be Carnage", "Fantasy", 1.45, "2021-10-27",
                 "After finding a host body in investigative reporter Eddie Brock, the alien symbiote must face a new enemy, Carnage, the alter ego of serial killer Cletus Kasady.",
                 "Amazon", "https://www.imdb.com/title/tt7097896/", "https://image.tmdb.org/t/p/original/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg");
@@ -94,11 +63,6 @@ public class DataLoader implements ApplicationRunner {
                 "King Charles VI declares that Knight Jean de Carrouges settle his dispute with his squire, Jacques Le Gris, by challenging him to a duel.",
                 "Netflix", "https://www.imdb.com/title/tt4244994/?ref_=fn_al_tt_1", "https://image.tmdb.org/t/p/original/zjrJE0fpzPvX8saJXj8VNfcjBoU.jpg");
         movieRepository.save(lastDuel);
-
-        Movie spiderMan = new Movie("Spider-Man: No Way Home", "Fantasy", 1.30, "2021-12-15",
-                "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
-                "Amazon", "https://www.imdb.com/title/tt10872600/?ref_=nv_sr_srsg_0", "https://image.tmdb.org/t/p/original/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg");
-        movieRepository.save(spiderMan);
 
         Movie bossBaby = new Movie("The Boss Baby: Family Business", "Animation", 1.30, "2021-08-22",
                 "The Templeton brothers — Tim and his Boss Baby little bro Ted — have become adults and drifted away from each other. But a new boss baby with a cutting-edge approach and a can-do attitude is about to bring them together again … and inspire a new family business.",
@@ -146,49 +110,84 @@ public class DataLoader implements ApplicationRunner {
         movieRepository.save(mortalKombat);
 
 
+//      MOVIES (not yet added)
+        Movie spiderMan = new Movie("Spider-Man: No Way Home", "Fantasy", 1.30, "2021-12-15",
+                "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+                "Amazon", "https://www.imdb.com/title/tt10872600/?ref_=nv_sr_srsg_0", "https://image.tmdb.org/t/p/original/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg");
+        movieRepository.save(spiderMan);
+
+
 
         // MOVIELISTS
-        MovieList favouriteMovies = new MovieList("Favourite Movies");
-        movieListRepository.save(favouriteMovies);
+        MovieList recommendedMovies = new MovieList("Recommended");
+        movieListRepository.save(recommendedMovies);
 
-        MovieList upcomingMovies = new MovieList("Upcoming Movies");
-        movieListRepository.save(upcomingMovies);
+        MovieList recentlyAddedMovies = new MovieList("Recently Added");
+        movieListRepository.save(recentlyAddedMovies);
+
+        MovieList familyFriendly = new MovieList("Family Friendly");
+        movieListRepository.save(familyFriendly);
 
 
 
         // SAVEDMOVIES
-        SavedMovie savedMovie1 = new SavedMovie(redNotice, favouriteMovies, true);
-        savedMovieRepository.save(savedMovie1);
+        SavedMovie savedMovie101 = new SavedMovie(redNotice, recommendedMovies, true);
+        savedMovieRepository.save(savedMovie101);
 
-        SavedMovie savedMovie2 = new SavedMovie(freeGuy, favouriteMovies, true);
-        savedMovieRepository.save(savedMovie2);
+        SavedMovie savedMovie102 = new SavedMovie(freeGuy, recommendedMovies, true);
+        savedMovieRepository.save(savedMovie102);
 
-        SavedMovie savedMovie3 = new SavedMovie(shangChi, upcomingMovies, false);
-        savedMovieRepository.save(savedMovie3);
+        SavedMovie savedMovie103 = new SavedMovie(suicideSquad, recommendedMovies, true);
+        savedMovieRepository.save(savedMovie103);
 
-        SavedMovie savedMovie4 = new SavedMovie(armyOfThieves, upcomingMovies, false);
-        savedMovieRepository.save(savedMovie4);
+        SavedMovie savedMovie104 = new SavedMovie(mortalKombat, recommendedMovies, true);
+        savedMovieRepository.save(savedMovie104);
 
-
-        SavedMovie savedMovie5 = new SavedMovie(redNotice1, upcomingMovies,false);
-        savedMovieRepository.save(savedMovie5);
-
-        SavedMovie savedMovie6 = new SavedMovie(redNotice2, upcomingMovies,false);
-        savedMovieRepository.save(savedMovie6);
-
-        SavedMovie savedMovie7 = new SavedMovie(redNotice3, upcomingMovies,false);
-        savedMovieRepository.save(savedMovie7);
-
-        SavedMovie savedMovie8 = new SavedMovie(redNotice4, upcomingMovies,false);
-        savedMovieRepository.save(savedMovie8);
-
-        SavedMovie savedMovie9 = new SavedMovie(redNotice5, upcomingMovies,false);
-        savedMovieRepository.save(savedMovie9);
+        SavedMovie savedMovie105 = new SavedMovie(jungleCruise, recommendedMovies, true);
+        savedMovieRepository.save(savedMovie105);
 
 
 
-        SavedMovie savedMovie10 = new SavedMovie(venom, upcomingMovies, false);
-        savedMovieRepository.save(savedMovie10);
+
+
+        SavedMovie savedMovie201 = new SavedMovie(shangChi, recentlyAddedMovies, false);
+        savedMovieRepository.save(savedMovie201);
+
+        SavedMovie savedMovie202 = new SavedMovie(armyOfThieves, recentlyAddedMovies, false);
+        savedMovieRepository.save(savedMovie202);
+
+        SavedMovie savedMovie203 = new SavedMovie(venom, recentlyAddedMovies, false);
+        savedMovieRepository.save(savedMovie203);
+
+        SavedMovie savedMovie204 = new SavedMovie(lastDuel, recentlyAddedMovies, false);
+        savedMovieRepository.save(savedMovie204);
+
+        SavedMovie savedMovie205 = new SavedMovie(homeAlone, recentlyAddedMovies, false);
+        savedMovieRepository.save(savedMovie205);
+
+
+
+
+        SavedMovie savedMovie301 = new SavedMovie(pawPatrol, familyFriendly,false);
+        savedMovieRepository.save(savedMovie301);
+
+        SavedMovie savedMovie302 = new SavedMovie(addamsFamily, familyFriendly,false);
+        savedMovieRepository.save(savedMovie302);
+
+        SavedMovie savedMovie303 = new SavedMovie(encanto, familyFriendly,false);
+        savedMovieRepository.save(savedMovie303);
+
+        SavedMovie savedMovie304 = new SavedMovie(clifford, familyFriendly,false);
+        savedMovieRepository.save(savedMovie304);
+
+        SavedMovie savedMovie305 = new SavedMovie(bossBaby, familyFriendly,false);
+        savedMovieRepository.save(savedMovie305);
+
+
+
+
+
+
 
 
 
