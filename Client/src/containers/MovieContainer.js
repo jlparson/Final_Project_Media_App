@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import CuratedList from "../components/CuratedList";
 import Request from '../helpers/request';
 import MovieDetail from "../components/MovieDetails";
+import "./MovieContainer.css"
 
 
 const MovieContainer = () => {
