@@ -10,7 +10,7 @@ const CuratedList = ({list1, list2, list3, onMovieClick}) => {
             
             <li   key={index} className="list-item">
             <div className="list-item">
-            <Movie movie={movie} onMovieClick={onMovieClick}/>
+            <Movie movie={movie} onMovieClick={onMovieClick} list1={list1} list2={list2} list3={list3}/>
             </div>
             </li>
         )
@@ -21,7 +21,7 @@ const CuratedList = ({list1, list2, list3, onMovieClick}) => {
             
             <li key={index} className="list-item">
             <div className="list-item">
-            <Movie movie={movie} onMovieClick={onMovieClick}/>
+            <Movie movie={movie} onMovieClick={onMovieClick} list1={list1} list2={list2} list3={list3}/>
             </div>
             </li>
         )
@@ -32,7 +32,7 @@ const CuratedList = ({list1, list2, list3, onMovieClick}) => {
             
             <li key={index} className="list-item">
             <div className="list-item">
-            <Movie movie={movie} onMovieClick={onMovieClick}/>
+            <Movie movie={movie} onMovieClick={onMovieClick} list1={list1} list2={list2} list3={list3}/>
             </div>
             </li>
         )

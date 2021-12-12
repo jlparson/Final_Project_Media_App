@@ -11,6 +11,7 @@ const MovieContainer = () => {
     const [list2, setList2] = useState(null);
     const [list3, setList3] = useState(null);
     const [selectedMovie, setSelectedMovie] = useState(null);
+    const [selectedList, setSelectedList] = useState(null);
     
     
 
@@ -37,13 +38,18 @@ const onMovieClick = (movie) => {
     setSelectedMovie(movie);
     }
 
+const handleAddToListSubmit = () => {
+    setSelectedList()
+    }
+
+
     
 
     return(
         <>
         
         {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} list1={list1} list2={list2} list3={list3}/>: null}
-        {selectedMovie ? <MovieDetail selectedMovie={selectedMovie} /> : null}
+        {selectedMovie ? <MovieDetail selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit}/> : null}
         </>
 
     )
