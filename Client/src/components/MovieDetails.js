@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
 
 const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3}) => {
-    return (
+
+const [selectedList, setSelectedList] = useState(null);
+
+const handleSelect = function(event){
+    setSelectedList(event.target.value)
+    console.log(event.target.value)
+}
+
+// const handleSubmit = function(event){
+//         event.preventDefault();
+//             onUpdate(set)}
+return (
         <>
         <div>
             <p>{selectedMovie.title}</p>
@@ -12,7 +23,7 @@ const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3}
         <div>
             <h3>Add to List</h3>
             <form onSubmit={handleAddToListSubmit}>
-            <select id = "dropdown" defaultValue="" >
+            <select id = "dropdown" defaultValue="" onSelect={handleSelect}>
                 <option value={list1}>Recommended</option>
                 <option value={list2}>Recently Added</option>
                 <option value={list3}>Family Friendly</option>
@@ -26,5 +37,6 @@ const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3}
 
     );
 };
+
 
 export default MovieDetail;
