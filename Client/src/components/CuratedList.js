@@ -1,15 +1,16 @@
 import React from "react";
 import Movie from "./Movie";
 import "./css/MovieList.css";
+import MovieDetail from "./MovieDetails";
 
-const CuratedList = ({list1, list2, list3}) => {
+const CuratedList = ({list1, list2, list3, onMovieClick}) => {
 
     const curatedList1 = list1.map((movie, index) => {
         return (
             
             <li   key={index} className="list-item">
             <div className="list-item">
-            <Movie movie={movie} />
+            <Movie movie={movie} onMovieClick={onMovieClick}/>
             </div>
             </li>
         )
@@ -20,7 +21,7 @@ const CuratedList = ({list1, list2, list3}) => {
             
             <li key={index} className="list-item">
             <div className="list-item">
-            <Movie movie={movie} />
+            <Movie movie={movie} onMovieClick={onMovieClick}/>
             </div>
             </li>
         )
@@ -31,7 +32,7 @@ const CuratedList = ({list1, list2, list3}) => {
             
             <li key={index} className="list-item">
             <div className="list-item">
-            <Movie movie={movie} />
+            <Movie movie={movie} onMovieClick={onMovieClick}/>
             </div>
             </li>
         )
