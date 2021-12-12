@@ -2,18 +2,23 @@ import React from "react"
 import "./css/MovieList.css";
 
 
-const Movie = ({movie}) => {
+const Movie = ({movie, onMovieClick}) => {
+
+
+    const handleClick = () =>{
+        onMovieClick(movie);
+       console.log({movie})
+     }
 
     if(!movie){
         return <p>Can't find movie...</p>
     }
-
-    // const url = "/movies/" + movie.id;
+   
 
     return(
         <>
             
-            <img id = "poster" src={movie.poster}  alt="movie poster" />
+            <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
         </>
     )
 }
