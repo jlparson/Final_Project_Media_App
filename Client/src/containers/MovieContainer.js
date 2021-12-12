@@ -14,6 +14,7 @@ const MovieContainer = () => {
     const [selectedMovie, setSelectedMovie] = useState(null);
     
     
+    
 
 const requestAll = function() {
     const request = new Request();
@@ -38,6 +39,8 @@ const onMovieClick = (movie) => {
     setSelectedMovie(movie);
     }
 
+
+
     
 
     return(
@@ -45,6 +48,7 @@ const onMovieClick = (movie) => {
         
         {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} list1={list1} list2={list2} list3={list3}/>: null}
         {selectedMovie ? <MovieDetail selectedMovie={selectedMovie} /> : null}
+        
         </>
 
     )

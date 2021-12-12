@@ -1,4 +1,19 @@
 #detail-popup-box{
-    border: solid;
-    border-color: white;
+    
+    width:80%;
+    height:80vh;
+    margin:auto;
+    position:relative;
+    bottom: 1000px;
+    padding :20px;
+    background-color: #191919;
+    background-color: solid;
+    border-radius: 25px;
+    box-shadow: 10px 10px 18px grey;
+    border-color:grey;
+    border-style: solid;
+}
+
+#descrip-poster{
+    display: flex;
 }
