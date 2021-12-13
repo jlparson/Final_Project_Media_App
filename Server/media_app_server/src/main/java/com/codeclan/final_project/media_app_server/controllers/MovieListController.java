@@ -32,7 +32,7 @@ public class MovieListController {
 
     @GetMapping(value = "/movieLists/user/{id}")
     public ResponseEntity getUserMovieList(@PathVariable Long id){
-        return new ResponseEntity(movieListRepository.findById(id), HttpStatus.OK);
+        return new ResponseEntity(movieRepository.findMoviesForMovieList(id), HttpStatus.OK);
     }
 
 

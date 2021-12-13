@@ -29,6 +29,7 @@ return (
             <h3>Add to List</h3>
             <form onSubmit={handleSubmit}>
             <select id = "dropdown" defaultValue="" onChange={handleSelect}>
+                <option selected="selected">Please select...</option>
                 <option value="4">Favourite Movies</option>
                 <option value="5">Watch Later</option>
                 <option value="6">Movies for the kids</option>

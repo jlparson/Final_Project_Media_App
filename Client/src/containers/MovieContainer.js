@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import{ Route, Switch } from "react-router-dom";
+import{ Route, Routes } from "react-router-dom";
 import CuratedList from "../components/CuratedList";
 import Request from '../helpers/request';
 import MovieDetail from "../components/MovieDetails";
@@ -15,6 +15,8 @@ const MovieContainer = () => {
     const [list5, setList5] = useState(null);
     const [list6, setList6] = useState(null);
     const [selectedMovie, setSelectedMovie] = useState(null);
+    const [selectedSavedMovie, setSelectedSavedMovie] = useState(null);
+    const [viewUserLists, setViewUserLists] = useState(false);
     
     
     
@@ -48,25 +50,39 @@ const onMovieClick = (movie) => {
     setSelectedMovie(movie);
     }
 
+const onSavedMovieClick = (savedMovie) => {
+    setSelectedSavedMovie(savedMovie);
+}
+
 const handleAddToListSubmit = (selectedMovie, selectedList) => {
-    console.log(selectedList)
+    
     const movieid = selectedMovie.id;
     const listid = selectedList;
+    console.log(movieid, listid);
     const request = new Request();
     request.get("/api/savedMovies/"+movieid+"/movielist/"+listid )
     }
 
+const handleUserViewChange = () => {
+    console.log("test2");
+    setViewUserLists(!viewUserLists);
+}
 
-    
-
+if(viewUserLists){
     return(
         <>
-        
-        {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} list1={list1} list2={list2} list3={list3}/>: null}
-        {selectedMovie ? <MovieDetail selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
-        </>
+        {viewUserLists? <CuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} list1={list4} list2={list5} list3={list6}/>: null}
+        </> 
 
     )
+} else {
+    return(
+        <>
+        {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} list1={list1} list2={list2} list3={list3}/>: null}
+        {selectedMovie ? <MovieDetail selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
+        </> 
+    )
+}
 }
 
 export default MovieContainer;

@@ -3,7 +3,7 @@ import Movie from "./Movie";
 import "./css/MovieList.css";
 import MovieDetail from "./MovieDetails";
 
-const CuratedList = ({list1, list2, list3, onMovieClick, onButtonClick}) => {
+const CuratedList = ({list1, list2, list3, onMovieClick, onButtonClick, handleViewChange}) => {
 
     const curatedList1 = list1.map((movie, index) => {
         return (
@@ -38,9 +38,15 @@ const CuratedList = ({list1, list2, list3, onMovieClick, onButtonClick}) => {
         )
     })
 
+    const setUserView = () => {
+        console.log("test");
+        handleViewChange();
+    }
+
     return (
         <>
         <br></br><br></br><br></br>
+        <button onClick={setUserView}>User view</button>
         <h3>Recommended</h3>
         <ul>{curatedList1}</ul>
 
