@@ -128,8 +128,15 @@ public class DataLoader implements ApplicationRunner {
         MovieList familyFriendly = new MovieList("Family Friendly");
         movieListRepository.save(familyFriendly);
 
-        MovieList userList = new MovieList("User List");
-        movieListRepository.save(userList);
+        MovieList favouriteMovies = new MovieList("Favourite movies");
+        movieListRepository.save(favouriteMovies);
+
+        MovieList watchLater = new MovieList("Movies to watch later");
+        movieListRepository.save(watchLater);
+
+        MovieList familyMovies = new MovieList("Movies to watch with the kids");
+        movieListRepository.save(familyMovies);
+
 
 
 

@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class SavedMovieController {
@@ -44,9 +45,17 @@ public class SavedMovieController {
 
     @GetMapping(value = "/savedMovies/{movieid}/movielist/{listid}")
     public ResponseEntity<SavedMovie> postSavedMovie(@PathVariable Long movieid, @PathVariable Long listid) {
-        Movie foundMovie = movieRepository.getById(movieid);
-        MovieList foundList = movieListRepository.getById(listid);
-        SavedMovie savedMovie = new SavedMovie(foundMovie, foundList, false );
+        Movie movie = null;
+        Optional<Movie> foundMovie = movieRepository.findById(movieid);
+        if(foundMovie.isPresent()) {
+            movie = foundMovie.get();
+        }
+        MovieList list = null;
+        Optional<MovieList> foundList = movieListRepository.findById(listid);
+        if(foundList.isPresent()){
+            list = foundList.get();
+        }
+        SavedMovie savedMovie = new SavedMovie(movie, list, false );
         savedMovieRepository.save(savedMovie);
         return new ResponseEntity<>(savedMovie, HttpStatus.CREATED);
 

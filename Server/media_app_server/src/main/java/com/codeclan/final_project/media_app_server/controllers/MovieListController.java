@@ -30,9 +30,9 @@ public class MovieListController {
         return new ResponseEntity(movieRepository.findMoviesForMovieList(id), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/movieLists/user")
-    public ResponseEntity getUserMovieList(){
-        return new ResponseEntity(movieListRepository.findById(4L), HttpStatus.OK);
+    @GetMapping(value = "/movieLists/user/{id}")
+    public ResponseEntity getUserMovieList(@PathVariable Long id){
+        return new ResponseEntity(movieListRepository.findById(id), HttpStatus.OK);
     }
 
 
