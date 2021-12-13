@@ -31,7 +31,11 @@ ul::-webkit-scrollbar{
 
 #poster:hover{
    
-    transform: scale(1.2);
+    transform: scale(1.08);
     
     
+}
+
+#detail-poster{
+    width:200px;
 }

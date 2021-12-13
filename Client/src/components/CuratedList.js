@@ -3,7 +3,7 @@ import Movie from "./Movie";
 import "./css/MovieList.css";
 import MovieDetail from "./MovieDetails";
 
-const CuratedList = ({list1, list2, list3, onMovieClick}) => {
+const CuratedList = ({list1, list2, list3, onMovieClick, onButtonClick}) => {
 
     const curatedList1 = list1.map((movie, index) => {
         return (

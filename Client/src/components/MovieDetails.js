@@ -19,7 +19,11 @@ return (
         <>
         <div>
             <p>{selectedMovie.title}</p>
+            <div id ="descript-poster">
+            <img id = "detail-poster" src={selectedMovie.poster}></img>
+            </div>
             <p>{selectedMovie.description}</p>
+            <button>Close</button>
         </div>
         <div>
             <h3>Add to List</h3>
