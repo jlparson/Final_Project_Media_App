@@ -38,9 +38,13 @@ const onMovieClick = (movie) => {
     setSelectedMovie(movie);
     }
 
-// const handleAddToListSubmit = () => {
-//     setSelectedList()
-//     }
+const handleAddToListSubmit = (selectedMovie, selectedList) => {
+    console.log(selectedList)
+    const movieid = selectedMovie.id;
+    const listid = selectedList.id;
+    const request = new Request();
+    request.post("/api/savedMovies/{movieid}/movielist/{listid}", {})
+    }
 
 
     
@@ -49,7 +53,7 @@ const onMovieClick = (movie) => {
         <>
         
         {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} list1={list1} list2={list2} list3={list3}/>: null}
-        {selectedMovie ? <MovieDetail selectedMovie={selectedMovie}/> : null}
+        {selectedMovie ? <MovieDetail selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
         </>
 
     )

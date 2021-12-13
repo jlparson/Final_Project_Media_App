@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 
 
@@ -11,9 +11,10 @@ const handleSelect = function(event){
     console.log(event.target.value)
 }
 
-// const handleSubmit = function(event){
-//         event.preventDefault();
-//             onUpdate(set)}
+const handleSubmit = function(event){
+        event.preventDefault();
+        handleAddToListSubmit(selectedMovie, selectedList)}
+
 return (
         <>
         <div>
@@ -22,8 +23,8 @@ return (
         </div>
         <div>
             <h3>Add to List</h3>
-            <form onSubmit={handleAddToListSubmit}>
-            <select id = "dropdown" defaultValue="" onSelect={handleSelect}>
+            <form onSubmit={handleSubmit}>
+            <select id = "dropdown" defaultValue="" onChange={handleSelect}>
                 <option value={list1}>Recommended</option>
                 <option value={list2}>Recently Added</option>
                 <option value={list3}>Family Friendly</option>

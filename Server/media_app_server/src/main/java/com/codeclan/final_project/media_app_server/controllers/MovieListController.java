@@ -27,7 +27,7 @@ public class MovieListController {
 
     @GetMapping(value = "/movieLists/{id}")
     public ResponseEntity getMovieList(@PathVariable Long id){
-        return new ResponseEntity(movieRepository.findMoviesForMovieList(id), HttpStatus.OK);
+        return new ResponseEntity(movieListRepository.findById(id), HttpStatus.OK);
     }
 
 
