@@ -10,6 +10,7 @@ const MovieContainer = () => {
     const [list1, setList1] = useState(null);
     const [list2, setList2] = useState(null);
     const [list3, setList3] = useState(null);
+    const [list4, setList4] = useState(null);
     const [selectedMovie, setSelectedMovie] = useState(null);
     
     
@@ -20,13 +21,15 @@ const requestAll = function() {
     const list1Promise = request.get('/api/movieLists/1')
     const list2Promise = request.get('/api/movieLists/2')
     const list3Promise = request.get('/api/movieLists/3')
+    const list4Promise = request.get('/api/movieLists/user')
             
 
-Promise.all([list1Promise, list2Promise, list3Promise ])
+Promise.all([list1Promise, list2Promise, list3Promise, list4Promise ])
     .then((data) => {
     setList1(data[0]);
     setList2(data[1]);
     setList3(data[2]);
+    setList4(data[3]);
     })
 }
 
@@ -41,9 +44,9 @@ const onMovieClick = (movie) => {
 const handleAddToListSubmit = (selectedMovie, selectedList) => {
     console.log(selectedList)
     const movieid = selectedMovie.id;
-    const listid = selectedList.id;
+    const listid = list4.id;
     const request = new Request();
-    request.post("/api/savedMovies/{movieid}/movielist/{listid}", {})
+    request.get("/api/savedMovies/"+movieid+"/movielist/"+listid )
     }
 
 

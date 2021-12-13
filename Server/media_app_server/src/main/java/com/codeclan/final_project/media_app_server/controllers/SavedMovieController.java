@@ -42,7 +42,7 @@ public class SavedMovieController {
 
     }
 
-    @PostMapping(value = "/savedMovies/{movieid}/movielist/{listid}")
+    @GetMapping(value = "/savedMovies/{movieid}/movielist/{listid}")
     public ResponseEntity<SavedMovie> postSavedMovie(@PathVariable Long movieid, @PathVariable Long listid) {
         Movie foundMovie = movieRepository.getById(movieid);
         MovieList foundList = movieListRepository.getById(listid);
