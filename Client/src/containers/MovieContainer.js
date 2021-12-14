@@ -49,6 +49,8 @@ const onMovieClick = (movie) => {
 const onButtonClick=() =>{
     setSelectedMovie(null)
 }
+
+
 // const onSavedMovieClick = (savedMovie) => {
 //     handleWatched(savedMovie.id);
 // }
