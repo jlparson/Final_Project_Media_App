@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./css/MovieDetail.css";
 
 
 
@@ -21,6 +22,7 @@ const handleButtonClick = function(event){
 
 return (
         <>
+        <div id ="detail-popup-box">
         <div>
             <p>{selectedMovie.title}</p>
             <div id ="descript-poster">
@@ -43,6 +45,7 @@ return (
             </form>
 
 
+        </div>
         </div>
         </>
 
