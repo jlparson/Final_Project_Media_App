@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 
-const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3}) => {
+const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick}) => {
 
 const [selectedList, setSelectedList] = useState(null);
 
@@ -15,6 +15,10 @@ const handleSubmit = function(event){
         event.preventDefault();
         handleAddToListSubmit(selectedMovie, selectedList)}
 
+const handleButtonClick = function(event){
+    onButtonClick()
+}
+
 return (
         <>
         <div>
@@ -23,7 +27,7 @@ return (
             <img id = "detail-poster" src={selectedMovie.poster}></img>
             </div>
             <p>{selectedMovie.description}</p>
-            <button>Close</button>
+            <button onClick = {handleButtonClick}>Close</button>
         </div>
         <div>
             <h3>Add to List</h3>
