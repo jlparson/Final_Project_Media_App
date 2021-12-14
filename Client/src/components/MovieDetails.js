@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./css/MovieDetail.css";
 
 
 
@@ -21,13 +22,14 @@ const handleButtonClick = function(event){
 
 return (
         <>
+        <div id ="detail-popup-box">
         <div>
             <p>{selectedMovie.title}</p>
             <div id ="descript-poster">
             <img id = "detail-poster" src={selectedMovie.poster}></img>
             </div>
             <p>{selectedMovie.description}</p>
-            <button onClick = {handleButtonClick}>Close</button>
+            <button id = "close-button" onClick = {handleButtonClick}>X</button>
         </div>
         <div>
             <h3>Add to List</h3>
@@ -42,9 +44,10 @@ return (
             <input type="submit" name="submit" value="Save" />
             </form>
 
-            <button onClick = {handleWatchedStatus}>Watched</button>
+            {/* <button onClick = {handleWatchedStatus}>Watched</button> */}
 
 
+        </div>
         </div>
         </>
 
