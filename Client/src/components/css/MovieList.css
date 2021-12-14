@@ -37,7 +37,9 @@ ul::-webkit-scrollbar{
 }
 
 #detail-poster{
-    width:200px;
+    width:150px;
+    object-fit: contain;
+    padding : 10px;
 }
 
 /* #user-view-button{

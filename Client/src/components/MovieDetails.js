@@ -24,13 +24,16 @@ return (
         <>
         <div id ="detail-popup-box">
         <div>
-            <p>{selectedMovie.title}</p>
-            <div id ="descript-poster">
+            <h3>{selectedMovie.title}</h3>
+            <div id = "descrip-poster">
             <img id = "detail-poster" src={selectedMovie.poster}></img>
-            </div>
+            <div id ="description">
             <p>{selectedMovie.description}</p>
-            <button id = "close-button" onClick = {handleButtonClick}>X</button>
+            
+            </div>
+            </div>
         </div>
+        <button id = "close-button" onClick = {handleButtonClick}>X</button>
         <div>
             <h3>Add to List</h3>
             <form onSubmit={handleSubmit}>

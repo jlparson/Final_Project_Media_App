@@ -54,7 +54,7 @@ const CuratedList = ({list1, list2, list3, onMovieClick, onButtonClick, handleVi
             return(
                 <>
                 <br></br><br></br><br></br>
-                <button onClick={setUserView}>User view</button>
+                <button onClick={setUserView}>My List</button>
                 <h3>Recommended</h3>
                 <ul>{curatedList1}</ul>
                 <h3>Recently Added</h3>
