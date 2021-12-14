@@ -193,6 +193,15 @@ public class DataLoader implements ApplicationRunner {
         SavedMovie savedMovie305 = new SavedMovie(bossBaby, familyFriendly,false);
         savedMovieRepository.save(savedMovie305);
 
+//        SavedMovie savedMovie1001 = new SavedMovie(redNotice, favouriteMovies, true);
+//        savedMovieRepository.save(savedMovie1001);
+//
+//        SavedMovie savedMovie1002 = new SavedMovie(redNotice, watchLater, true);
+//        savedMovieRepository.save(savedMovie1002);
+//
+//        SavedMovie savedMovie1003 = new SavedMovie(redNotice, familyMovies, true);
+//        savedMovieRepository.save(savedMovie1003);
+
 
 
 
