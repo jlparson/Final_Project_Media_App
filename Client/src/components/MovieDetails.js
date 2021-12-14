@@ -41,7 +41,7 @@ return (
                 <option value="6">Movies for the kids</option>
 
             </select>
-            <input type="submit" name="submit" value="Save" />
+            <button onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
             </form>
 
             {/* <button onClick = {handleWatchedStatus}>Watched</button> */}
