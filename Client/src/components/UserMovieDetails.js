@@ -3,7 +3,7 @@ import "./css/MovieDetail.css";
 
 
 
-const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick}) => {
+const UserMovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick}) => {
 
 const [selectedList, setSelectedList] = useState(null);
 
@@ -20,9 +20,9 @@ const handleButtonClick = function(){
     onButtonClick()
 }
 
-// const handleWatchButton = function(){
-//     onWatchedButtonClick(selectedMovie.id)
-// }
+const handleWatchButton = function(){
+    onWatchedButtonClick(selectedMovie.id)
+}
 
 return (
         <>
@@ -48,7 +48,7 @@ return (
             <button onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
             </form>
 
-            {/* <button onClick = {handleWatchButton}>Watched</button> */}
+            <button onClick = {handleWatchButton}>Watched</button>
 
 
         </div>
@@ -59,4 +59,4 @@ return (
 };
 
 
-export default MovieDetail;
+export default UserMovieDetail;

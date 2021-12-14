@@ -18,7 +18,7 @@ const UserMovie = ({movie, onMovieClick, watched}) => {
         <>
             
             <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
-            <p>Watched={watched}</p>
+            <p>Watched: {watched.toString()}</p>
         </>
     )
 }

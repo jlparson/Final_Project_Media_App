@@ -4,6 +4,8 @@ import CuratedList from "../components/CuratedList";
 import UserCuratedList from "../components/UserCuratedList";
 import Request from '../helpers/request';
 import MovieDetail from "../components/MovieDetails";
+import UserMovieDetail from "../components/UserMovieDetails";
+
 import "./MovieContainer.css"
 const MovieContainer = () => {
     const [list1, setList1] = useState(null);
@@ -14,7 +16,7 @@ const MovieContainer = () => {
     const [list6, setList6] = useState(null);
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [selectedSavedMovie, setSelectedSavedMovie] = useState(null);
-    const [viewUserLists, setViewUserLists] = useState(false);
+    const [viewUserLists, setViewUserLists] = useState(true);
     const [savedMovies, setSavedMovies] = useState(null);
     
     
@@ -62,7 +64,10 @@ const onWatchedButtonClick = (selectedMovieId) => {
             savedMovie.watched = !savedMovie.watched;
             console.log(savedMovie);
             const request = new Request();
-            request.patch('/api/savedMovies/{id}', savedMovie);
+            request.patch('/api/savedMovies/{id}', savedMovie)
+            .then(setViewUserLists(true))
+            .then(window.location.href = "http://localhost:3000/");
+            
         }
     }
 }
@@ -87,7 +92,7 @@ if(viewUserLists){
     return(
         <>
         {viewUserLists? <UserCuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} savedMovies={savedMovies} viewUserLists={viewUserLists}/>: null}
-        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <UserMovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 } else {

@@ -11,43 +11,43 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
     let curatedList2 = []
     let curatedList3 = []
     if(savedMovies){
-        savedMovies.map((movie) => {
-            if(movie.movieList.listName == "Favourite movies"){
-                familyFriendly.push({"movie": movie, "watched": movie.watched});
+        savedMovies.map((savedMovieObject) => {
+            if(savedMovieObject.movieList.listName == "Favourite movies"){
+                familyFriendly.push({"movie": savedMovieObject, "watched": savedMovieObject.watched});
             }
-            if(movie.movieList.listName == "Movies to watch later"){
-                recommended.push({"movie": movie, "watched": movie.watched});
+            if(savedMovieObject.movieList.listName == "Movies to watch later"){
+                recommended.push({"movie": savedMovieObject, "watched": savedMovieObject.watched});
             }
-            if(movie.movieList.listName == "Movies to watch with the kids"){
-                recentlyAdded.push({"movie": movie, "watched": movie.watched});
+            if(savedMovieObject.movieList.listName == "Movies to watch with the kids"){
+                recentlyAdded.push({"movie": savedMovieObject, "watched": savedMovieObject.watched});
             }
         })
-        curatedList1 = recentlyAdded.map((movie, index) => {
+        curatedList1 = recentlyAdded.map((savedMovieObject, index) => {
             return (
 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <UserMovie movie={movie.movie.movie} onMovieClick={onMovieClick} watched={movie.watched}/>
+                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched}/>
                 </div>
                 </li>
             )
         })
-        curatedList2 = familyFriendly.map((movie, index) => {
+        curatedList2 = familyFriendly.map((savedMovieObject, index) => {
             return (
                 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <UserMovie movie={movie.movie.movie} onMovieClick={onMovieClick} watched={movie.watched}/>
+                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched}/>
                 </div>
                 </li>
             )
         })
-        curatedList3 = recommended.map((movie, index) => {
+        curatedList3 = recommended.map((savedMovieObject, index) => {
             return (
                 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <UserMovie movie={movie.movie.movie} onMovieClick={onMovieClick} watched={movie.watched}/>
+                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched}/>
                 </div>
                 </li>
             )
