@@ -50,6 +50,10 @@ const onMovieClick = (movie) => {
     setSelectedMovie(movie);
     }
 
+const onButtonClick=() =>{
+    setSelectedMovie(null)
+}
+
 const onSavedMovieClick = (savedMovie) => {
     setSelectedSavedMovie(savedMovie);
 }
@@ -79,7 +83,7 @@ if(viewUserLists){
     return(
         <>
         {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} list1={list1} list2={list2} list3={list3}/>: null}
-        {selectedMovie ? <MovieDetail selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 }
