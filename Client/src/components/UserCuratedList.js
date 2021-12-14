@@ -2,6 +2,7 @@ import React from "react";
 import Movie from "./Movie";
 import "./css/MovieList.css";
 import MovieDetail from "./MovieDetails";
+import UserMovie from "./UserMovie";
 const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUserLists, savedMovies}) => {
     const recentlyAdded = [];
     const familyFriendly = [];
@@ -12,21 +13,21 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
     if(savedMovies){
         savedMovies.map((movie) => {
             if(movie.movieList.listName == "Favourite movies"){
-                familyFriendly.push(movie);
+                familyFriendly.push({"movie": movie, "watched": movie.watched});
             }
             if(movie.movieList.listName == "Movies to watch later"){
-                recommended.push(movie);
+                recommended.push({"movie": movie, "watched": movie.watched});
             }
             if(movie.movieList.listName == "Movies to watch with the kids"){
-                recentlyAdded.push(movie);
+                recentlyAdded.push({"movie": movie, "watched": movie.watched});
             }
         })
         curatedList1 = recentlyAdded.map((movie, index) => {
             return (
-                
+
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <Movie movie={movie.movie} onMovieClick={onMovieClick}/>
+                <UserMovie movie={movie.movie.movie} onMovieClick={onMovieClick} watched={movie.watched}/>
                 </div>
                 </li>
             )
@@ -36,7 +37,7 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
                 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <Movie movie={movie.movie} onMovieClick={onMovieClick}/>
+                <UserMovie movie={movie.movie.movie} onMovieClick={onMovieClick} watched={movie.watched}/>
                 </div>
                 </li>
             )
@@ -46,7 +47,7 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
                 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <Movie movie={movie.movie} onMovieClick={onMovieClick}/>
+                <UserMovie movie={movie.movie.movie} onMovieClick={onMovieClick} watched={movie.watched}/>
                 </div>
                 </li>
             )

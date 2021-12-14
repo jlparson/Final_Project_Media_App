@@ -40,22 +40,33 @@ Promise.all([list1Promise, list2Promise, list3Promise, list4Promise, list5Promis
     setSavedMovies(data[6]);
     }, [savedMovies])
 }
+
 useEffect(() => {
     requestAll()
 }, [])
+
 const onMovieClick = (movie) => {
     setSelectedMovie(movie);
-    }
+}
+
 const onButtonClick=() =>{
     setSelectedMovie(null)
 }
 
-// const handleWatched = (savedMovie.id) => {
-// }
 
-// const onSavedMovieClick = (savedMovie) => {
-//     handleWatched(savedMovie.id);
-// }
+
+const onWatchedButtonClick = (selectedMovieId) => {
+    console.log(selectedMovie);
+    for (let savedMovie of savedMovies){
+        if(savedMovie.movie.id === selectedMovieId){
+            savedMovie.watched = !savedMovie.watched;
+            console.log(savedMovie);
+            const request = new Request();
+            request.patch('/api/savedMovies/{id}', savedMovie);
+        }
+    }
+}
+
 
 
 const handleAddToListSubmit = (selectedMovie, selectedList) => {
@@ -66,24 +77,27 @@ const handleAddToListSubmit = (selectedMovie, selectedList) => {
     const request = new Request();
     request.get("/api/savedMovies/"+movieid+"/movielist/"+listid )
     }
+
 const handleUserViewChange = () => {
     console.log("test2");
     setViewUserLists(!viewUserLists);
 }
+
 if(viewUserLists){
     return(
         <>
         {viewUserLists? <UserCuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} savedMovies={savedMovies} viewUserLists={viewUserLists}/>: null}
-        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 } else {
     return(
         <>
         {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} savedMovies={savedMovies} handleViewChange={handleUserViewChange} list1={list1} list2={list2} list3={list3} viewUserLists={viewUserLists}/>: null}
-        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 }
 }
+
 export default MovieContainer;

@@ -3,7 +3,7 @@ import "./css/MovieDetail.css";
 
 
 
-const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick}) => {
+const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick}) => {
 
 const [selectedList, setSelectedList] = useState(null);
 
@@ -16,8 +16,12 @@ const handleSubmit = function(event){
         event.preventDefault();
         handleAddToListSubmit(selectedMovie, selectedList)}
 
-const handleButtonClick = function(event){
+const handleButtonClick = function(){
     onButtonClick()
+}
+
+const handleWatchButton = function(){
+    onWatchedButtonClick(selectedMovie.id)
 }
 
 return (
@@ -44,7 +48,7 @@ return (
             <button onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
             </form>
 
-            {/* <button onClick = {handleWatchedStatus}>Watched</button> */}
+            <button onClick = {handleWatchButton}>Watched</button>
 
 
         </div>
