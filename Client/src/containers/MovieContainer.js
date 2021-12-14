@@ -71,14 +71,14 @@ const handleUserViewChange = () => {
 if(viewUserLists){
     return(
         <>
-        {viewUserLists? <CuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} list1={list4} list2={list5} list3={list6}/>: null}
+        {viewUserLists? <CuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} list1={list4} list2={list5} list3={list6} viewUserLists={viewUserLists}/>: null}
         </> 
 
     )
 } else {
     return(
         <>
-        {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} list1={list1} list2={list2} list3={list3}/>: null}
+        {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} list1={list1} list2={list2} list3={list3} viewUserLists={viewUserLists}/>: null}
         {selectedMovie ? <MovieDetail selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
