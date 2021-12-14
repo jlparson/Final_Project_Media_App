@@ -27,3 +27,9 @@
 #descrip-poster{
     display: flex;
 }
+
+#close-button{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}

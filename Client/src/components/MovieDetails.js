@@ -29,7 +29,7 @@ return (
             <img id = "detail-poster" src={selectedMovie.poster}></img>
             </div>
             <p>{selectedMovie.description}</p>
-            <button onClick = {handleButtonClick}>Close</button>
+            <button id = "close-button" onClick = {handleButtonClick}>X</button>
         </div>
         <div>
             <h3>Add to List</h3>
