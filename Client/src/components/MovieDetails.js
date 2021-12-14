@@ -42,6 +42,8 @@ return (
             <input type="submit" name="submit" value="Save" />
             </form>
 
+            <button onClick = {handleWatchedStatus}>Watched</button>
+
 
         </div>
         </>

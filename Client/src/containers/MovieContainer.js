@@ -55,8 +55,12 @@ const onButtonClick=() =>{
 }
 
 const onSavedMovieClick = (savedMovie) => {
-    setSelectedSavedMovie(savedMovie);
+    handleWatched(savedMovie.id);
 }
+
+// const handleWatched = (savedMovie.id) => {
+
+// }
 
 const handleAddToListSubmit = (selectedMovie, selectedList) => {
     
