@@ -36,7 +36,7 @@ return (
         <button id = "close-button" onClick = {handleButtonClick}>X</button>
         <div>
             <h3>Add to List</h3>
-            <form onSubmit={handleSubmit}>
+            <form  onSubmit={handleSubmit}>
             <select id = "dropdown" defaultValue="" onChange={handleSelect}>
                 <option selected="selected">Please select...</option>
                 <option value="4">Favourite Movies</option>
@@ -44,7 +44,7 @@ return (
                 <option value="6">Movies for the kids</option>
 
             </select>
-            <input type="submit" name="submit" value="Save" />
+            <input id= "save-button" type="submit" name="submit" value="Save" />
             </form>
 
             {/* <button onClick = {handleWatchedStatus}>Watched</button> */}
