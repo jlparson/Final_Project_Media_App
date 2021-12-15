@@ -56,6 +56,24 @@ const onButtonClick=() =>{
 // }
 // const handleWatched = (savedMovie.id) => {
 // }
+const handleDeleteFromList = (selectedMovie, selectedList) => {
+    console.log(selectedList);
+    for(let savedMovie of savedMovies){
+        console.log("savedMovie movielist id", savedMovie.movieList.id);
+        console.log("selectedMovie id", selectedMovie.id);
+        console.log("selectedList", selectedList);
+        console.log("savedMovie movie id", savedMovie.movie.id);
+        if(selectedMovie.id === savedMovie.movie.id && selectedList === savedMovie.movieList.id){
+            console.log("if triggered")
+            const savedMovieId = savedMovie.id
+            const request = new Request();
+            // console.log(savedMovieId);
+            
+            request.delete("api/savedMovies/"+savedMovieId)
+        }
+    }
+}
+
 const handleAddToListSubmit = (selectedMovie, selectedList) => {
     
     const movieid = selectedMovie.id;
@@ -72,14 +90,14 @@ if(viewUserLists){
     return(
         <>
         {viewUserLists? <UserCuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} savedMovies={savedMovies} viewUserLists={viewUserLists}/>: null}
-        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} handleDeleteFromList={handleDeleteFromList} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 } else {
     return(
         <>
         {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} savedMovies={savedMovies} handleViewChange={handleUserViewChange} list1={list1} list2={list2} list3={list3} viewUserLists={viewUserLists}/>: null}
-        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} handleDeleteFromList={handleDeleteFromList} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 }
