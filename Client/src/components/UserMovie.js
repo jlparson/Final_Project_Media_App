@@ -1,5 +1,5 @@
-import React from "react"
-
+import React from "react";
+import Rating from 'react-simple-star-rating';
 import "./css/MovieList.css";
 
 
@@ -12,9 +12,6 @@ const UserMovie = ({movie, onMovieClick, watched, rating}) => {
        
      }
 
-    // const onStarRatingClick = () => {
-
-    // }
 
 
     if(!movie){
@@ -29,7 +26,6 @@ const UserMovie = ({movie, onMovieClick, watched, rating}) => {
             <p>Watched: {watched.toString()}</p>
             <p>Rating: {rating}</p>
 
-    
         </>
     )
 }

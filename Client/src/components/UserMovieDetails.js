@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import Rating from 'react-simple-star-rating';
 import "./css/MovieDetail.css";
 
 
 
-const UserMovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick}) => {
+const UserMovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick, onStarRatingClick}) => {
 
 const [selectedList, setSelectedList] = useState(null);
+const [rating, setRating] = useState();
 
 const handleSelect = function(event){
     setSelectedList(event.target.value)
@@ -22,6 +24,10 @@ const handleButtonClick = function(){
 
 const handleWatchButton = function(){
     onWatchedButtonClick(selectedMovie.id)
+}
+
+const handleStarRatingButton = function(){
+    onStarRatingClick(selectedMovie.id)
 }
 
 return (
@@ -49,6 +55,13 @@ return (
             </form>
 
             <button onClick = {handleWatchButton}>Watched</button>
+            
+            <div className='star_rating'>
+                <Rating
+                    onStarRatingClick={handleStarRatingButton}
+                    ratingValue={rating}
+                />
+            </div>
 
 
         </div>

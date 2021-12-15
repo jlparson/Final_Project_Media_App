@@ -73,11 +73,9 @@ const onWatchedButtonClick = (selectedMovieId) => {
 }
 
 const onStarRatingClick = (selectedMovieId, newRating) => {
-    console.log(selectedMovie);
     for (let savedMovie of savedMovies){
         if(savedMovie.movie.id === selectedMovieId){
             savedMovie.rating = newRating;
-            console.log(savedMovie);
             const request = new Request();
             request.patch('/api/savedMovies/{id}', savedMovie)
             .then(setViewUserLists(true))
@@ -90,7 +88,6 @@ const onStarRatingClick = (selectedMovieId, newRating) => {
 
 
 const handleAddToListSubmit = (selectedMovie, selectedList) => {
-    
     const movieid = selectedMovie.id;
     const listid = selectedList;
     console.log(movieid, listid);
