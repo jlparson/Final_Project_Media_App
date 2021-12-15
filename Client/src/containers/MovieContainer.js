@@ -61,6 +61,7 @@ const onButtonClick=() =>{
 // }
 // const handleWatched = (savedMovie.id) => {
 // }
+
 const handleDeleteFromList = (selectedMovie, selectedList) => {
     console.log(selectedList);
     for(let savedMovie of savedMovies){
@@ -68,13 +69,17 @@ const handleDeleteFromList = (selectedMovie, selectedList) => {
         console.log("selectedMovie id", selectedMovie.id);
         console.log("selectedList", selectedList);
         console.log("savedMovie movie id", savedMovie.movie.id);
-        if(selectedMovie.id === savedMovie.movie.id && selectedList === savedMovie.movieList.id){
+        if(selectedMovie.id === savedMovie.movie.id && savedMovie.movieList.id !== 1 && savedMovie.movieList.id !== 2 && savedMovie.movieList.id !== 3){
             console.log("if triggered")
             const savedMovieId = savedMovie.id
             const request = new Request();
             // console.log(savedMovieId);
             
             request.delete("api/savedMovies/"+savedMovieId)
+            .then(window.location.href = "http://localhost:3000/");
+        }
+    }
+}
 
 const onWatchedButtonClick = (selectedMovieId) => {
     console.log(selectedMovie);
