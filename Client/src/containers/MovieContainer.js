@@ -5,9 +5,10 @@ import UserCuratedList from "../components/UserCuratedList";
 import Request from '../helpers/request';
 import MovieDetail from "../components/MovieDetails";
 import UserMovieDetail from "../components/UserMovieDetails";
+import SearchedMovieDetails from "../components/SearchedMovieDetails";
 
 import "./MovieContainer.css"
-const MovieContainer = () => {
+const MovieContainer = (props) => {
     const [list1, setList1] = useState(null);
     const [list2, setList2] = useState(null);
     const [list3, setList3] = useState(null);
@@ -19,7 +20,9 @@ const MovieContainer = () => {
     const [viewUserLists, setViewUserLists] = useState(true);
     const [savedMovies, setSavedMovies] = useState(null);
     
-    
+    // useEffect(()=>{
+
+    // }, [searchedMovie])
     
 const requestAll = function() {
     const request = new Request();
@@ -54,7 +57,9 @@ const onMovieClick = (movie) => {
 const onButtonClick=() =>{
     setSelectedMovie(null)
 }
-
+const onSearchbarButtonClick=() =>{
+    setSelectedMovie(null)
+}
 
 // const onSavedMovieClick = (savedMovie) => {
 //     handleWatched(savedMovie.id);
@@ -98,6 +103,10 @@ const onWatchedButtonClick = (selectedMovieId) => {
 
 
 
+const onSavedMovieClick = (savedMovie) => {
+    setSelectedSavedMovie(savedMovie);
+}
+
 const handleAddToListSubmit = (selectedMovie, selectedList) => {
     
     const movieid = selectedMovie.id;
@@ -115,6 +124,11 @@ const handleUserViewChange = () => {
 if(viewUserLists){
     return(
         <>
+
+        {props.searchedMovie &&
+    
+        <SearchedMovieDetails searchedMovie={props.searchedMovie[0]} handleAddToListSubmit={handleAddToListSubmit} onSearchbarCloseButtonClick={props.onSearchbarCloseButtonClick} handleAddToListFromSearchSubmit={props.handleAddToListFromSearchSubmit}/>}
+
         {viewUserLists? <UserCuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} savedMovies={savedMovies} viewUserLists={viewUserLists}/>: null}
         {selectedMovie ? <UserMovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} handleDeleteFromList={handleDeleteFromList} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
@@ -122,6 +136,11 @@ if(viewUserLists){
 } else {
     return(
         <>
+
+        {props.searchedMovie &&
+    
+        <SearchedMovieDetails searchedMovie={props.searchedMovie[0]} handleAddToListSubmit={handleAddToListSubmit} onSearchbarCloseButtonClick={props.onSearchbarCloseButtonClick} handleAddToListFromSearchSubmit={props.handleAddToListFromSearchSubmit}/>}
+
         {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} savedMovies={savedMovies} handleViewChange={handleUserViewChange} list1={list1} list2={list2} list3={list3} viewUserLists={viewUserLists}/>: null}
         {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} handleDeleteFromList={handleDeleteFromList} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
