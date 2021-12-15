@@ -45,9 +45,12 @@ public class Movie {
     @Column(name = "trailer")
     private String trailer;
 
+    @Column(name = "provider")
+    private String provider;
 
 
-    public Movie(String title, String genre, double runTime, String releaseDate, String description, String providers, String moreInfo, String poster, String trailer) {
+
+    public Movie(String title, String genre, double runTime, String releaseDate, String description, String providers, String moreInfo, String poster, String trailer, String provider) {
         this.title = title;
         this.genre = genre;
         this.runTime = runTime;
@@ -57,6 +60,7 @@ public class Movie {
         this.moreInfo = moreInfo;
         this.poster = poster;
         this.trailer = trailer;
+        this.provider = provider;
     }
 
     public Movie(){
@@ -141,5 +145,13 @@ public class Movie {
 
     public void setTrailer(String trailer) {
         this.trailer = trailer;
+    }
+
+    public String getProvider() {
+        return provider;
+    }
+
+    public void setProvider(String provider) {
+        this.provider = provider;
     }
 }

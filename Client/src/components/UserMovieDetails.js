@@ -59,6 +59,8 @@ return (
                 <p class ="movie-info-element">Genre: {selectedMovie.genre}</p>
                 <p class ="movie-info-element">Release date: {selectedMovie.releaseDate}</p>
                 <a  class ="movie-info-element" href = {selectedMovie.moreInfo}> Click for More Info</a>
+                <br/>
+                <a class="button" href={selectedMovie.provider}>Watch now</a>
             </div>
             
         
@@ -74,6 +76,7 @@ return (
             </select>
             <button  class = "save-button" onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
             </form>
+            
             <button  id = "delete-button" onClick={handleMovieDelete} >Delete</button>
 
             <button onClick = {handleWatchButton} >Watched</button>
