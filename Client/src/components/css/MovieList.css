@@ -36,8 +36,8 @@ ul::-webkit-scrollbar{
     
 }
 
-#detail-poster{
-    width:150px;
+.detail-poster{
+    width:100px;
     object-fit: contain;
     padding : 10px;
 }
