@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./css/MovieDetail.css";
 import Youtube from "react-youtube";
+import movieTrailer from 'movie-trailer';
 
 
 const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick, handleDeleteFromList}) => {
@@ -26,7 +27,7 @@ const opts = {
     width: "30%",
     playerVars: {
         // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
+        autoplay: 0,
     },
 };
 
@@ -36,6 +37,7 @@ return (
         <div>
         <Youtube videoId={selectedMovie.trailer} opts={opts} />
             <h3>{selectedMovie.title}</h3>
+            <p>{selectedMovie.provider}</p>
             <div id = "descrip-poster">
             <img id = "detail-poster" src={selectedMovie.poster}></img>
             <div id ="description">
@@ -55,12 +57,10 @@ return (
                 <option value="6">Movies for the kids</option>
 
             </select>
-            {/* <input type="submit" name="submit" value="Save" /> */}
             <button id= "save-button" onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
             </form>
-            {/* <button onClick={handleMovieDelete}>Delete</button> */}
 
-            {/* <button onClick = {handleWatchButton}>Watched</button> */}
+            <a class="button" href={selectedMovie.provider}>Watch now</a>
 
 
         </div>
