@@ -27,7 +27,7 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched} rating={savedMovieObject.rating} />
+                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched} rating={savedMovieObject.rating} savedMovie={savedMovieObject} />
                 </div>
                 </li>
             )
@@ -37,7 +37,7 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
                 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched} rating={savedMovieObject.rating} />
+                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched} rating={savedMovieObject.rating} savedMovie={savedMovieObject} />
                 </div>
                 </li>
             )
@@ -47,7 +47,7 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
                 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched} rating={savedMovieObject.rating} />
+                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched} rating={savedMovieObject.rating} savedMovie={savedMovieObject} />
                 </div>
                 </li>
             )

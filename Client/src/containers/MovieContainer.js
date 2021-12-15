@@ -88,22 +88,9 @@ const onWatchedButtonClick = (selectedMovieId) => {
             savedMovie.watched = !savedMovie.watched;
             console.log(savedMovie);
             const request = new Request();
-            request.patch('/api/savedMovies/{id}', savedMovie)
+            request.patch('/api/savedMovies/{selectedMovieId}', savedMovie)
             .then(setViewUserLists(true))
-            .then(window.location.href = "http://localhost:3000/");
-            
-        }
-    }
-}
-
-const onStarRatingClick = (selectedMovieId, newRating) => {
-    for (let savedMovie of savedMovies){
-        if(savedMovie.movie.id === selectedMovieId){
-            savedMovie.rating = newRating;
-            const request = new Request();
-            request.patch('/api/savedMovies/{id}', savedMovie)
-            .then(setViewUserLists(true))
-            .then(window.location.href = "http://localhost:3000/");
+            // .then(window.location.href = "http://localhost:3000/");
             
         }
     }

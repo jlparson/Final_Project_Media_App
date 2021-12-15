@@ -1,17 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import StarRating from "../components/StarRating";
 import "./css/MovieList.css";
+import Request from "../helpers/request";
 
 
-const UserMovie = ({movie, onMovieClick, watched, rating}) => {
+const UserMovie = ({movie, onMovieClick, watched, rating, savedMovie}) => {
 
-
+    const [stateRating, setStateRating] = useState(rating);
 
     const handleClick = () =>{
         onMovieClick(movie);
        
      }
 
+    const handleRating = (rating) => {
+        const request = new Request();
+        savedMovie.rating = rating;
+        request.patch(`http://localhost:8080/api/savedMovies/1`, savedMovie);
+    }
 
 
     if(!movie){
@@ -23,7 +29,8 @@ const UserMovie = ({movie, onMovieClick, watched, rating}) => {
             <>
             <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
             <p><b><center>Watched: &#10060;</center></b></p>
-            <StarRating />
+            <p>Rating: {rating}</p>
+            <StarRating onRate={handleRating} />
             </>
         )
     } else {
@@ -31,7 +38,7 @@ const UserMovie = ({movie, onMovieClick, watched, rating}) => {
             <>
             <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
             <p><b><center>Watched: &#x2705;</center></b></p>
-            <StarRating />
+            <StarRating onRate={handleRating} />
             </>
         )
     }
