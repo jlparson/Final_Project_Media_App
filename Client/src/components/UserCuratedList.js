@@ -61,7 +61,7 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
             return(
                 <>
                 <br></br><br></br><br></br>
-                <button onClick={setUserView}>User view</button>
+                <button onClick={setUserView}>Home</button>
                 <h3>To Watch with Kids</h3>
                 <ul>{curatedList1}</ul>
                 <h3>Favourite Movies</h3>

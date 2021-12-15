@@ -4,7 +4,7 @@ import "./css/MovieDetail.css";
 
 
 
-const UserMovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick, onStarRatingClick}) => {
+const UserMovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick, handleDeleteFromList, onStarRatingClick}) => {
 
 const [selectedList, setSelectedList] = useState(null);
 const [rating, setRating] = useState();
@@ -30,6 +30,13 @@ const handleStarRatingButton = function(){
     onStarRatingClick(selectedMovie.id)
 }
 
+const handleMovieDelete = function(event){
+    event.preventDefault();
+    handleDeleteFromList(selectedMovie, selectedList)
+    // console.log(selectedList);
+    
+}
+
 return (
         <>
         <div id ="detail-popup-box">
@@ -53,6 +60,7 @@ return (
             </select>
             <button onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
             </form>
+            <button onClick={handleMovieDelete} >Delete</button>
 
             <button onClick = {handleWatchButton}>Watched</button>
             
