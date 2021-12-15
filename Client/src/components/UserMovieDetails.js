@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Rating from 'react-simple-star-rating';
 import "./css/MovieDetail.css";
 
 
@@ -64,12 +63,6 @@ return (
 
             <button onClick = {handleWatchButton}>Watched</button>
             
-            <div className='star_rating'>
-                <Rating
-                    onStarRatingClick={handleStarRatingButton}
-                    ratingValue={rating}
-                />
-            </div>
 
 
         </div>

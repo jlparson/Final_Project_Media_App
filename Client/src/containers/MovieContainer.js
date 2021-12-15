@@ -128,14 +128,14 @@ if(viewUserLists){
     return(
         <>
         {viewUserLists? <UserCuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} savedMovies={savedMovies} viewUserLists={viewUserLists}/>: null}
-        {selectedMovie ? <UserMovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} handleDeleteFromList={handleDeleteFromList} onWatchedButtonClick={onWatchedButtonClick} onStarRatingClick={onStarRatingClick} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <UserMovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} handleDeleteFromList={handleDeleteFromList} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 } else {
     return(
         <>
         {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} savedMovies={savedMovies} handleViewChange={handleUserViewChange} list1={list1} list2={list2} list3={list3} viewUserLists={viewUserLists}/>: null}
-        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} handleDeleteFromList={handleDeleteFromList} onWatchedButtonClick={onWatchedButtonClick} onStarRatingClick={onStarRatingClick} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} handleDeleteFromList={handleDeleteFromList} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 }

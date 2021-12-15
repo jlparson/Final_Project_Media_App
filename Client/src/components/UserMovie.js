@@ -1,5 +1,5 @@
 import React from "react";
-import Rating from 'react-simple-star-rating';
+import StarRating from "../components/StarRating";
 import "./css/MovieList.css";
 
 
@@ -23,6 +23,7 @@ const UserMovie = ({movie, onMovieClick, watched, rating}) => {
             <>
             <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
             <p><b><center>Watched: &#10060;</center></b></p>
+            <StarRating />
             </>
         )
     } else {
@@ -30,6 +31,7 @@ const UserMovie = ({movie, onMovieClick, watched, rating}) => {
             <>
             <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
             <p><b><center>Watched: &#x2705;</center></b></p>
+            <StarRating />
             </>
         )
     }
