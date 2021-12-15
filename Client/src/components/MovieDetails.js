@@ -3,7 +3,7 @@ import "./css/MovieDetail.css";
 import Youtube from "react-youtube";
 
 
-const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick}) => {
+const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick, handleDeleteFromList}) => {
 
 const [selectedList, setSelectedList] = useState(null);
 
@@ -14,9 +14,10 @@ const handleSelect = function(event){
 
 const handleSubmit = function(event){
         event.preventDefault();
-        handleAddToListSubmit(selectedMovie, selectedList)}
+        handleAddToListSubmit(selectedMovie, selectedList)
+}
 
-const handleButtonClick = function(event){
+const handleButtonClick = function(){
     onButtonClick()
 }
 
@@ -33,17 +34,20 @@ return (
         <>
         <div id ="detail-popup-box">
         <div>
-            <Youtube videoId={selectedMovie.trailer} opts={opts} />
-            <p>{selectedMovie.title}</p>
-            <div id ="descript-poster">
+        <Youtube videoId={selectedMovie.trailer} opts={opts} />
+            <h3>{selectedMovie.title}</h3>
+            <div id = "descrip-poster">
             <img id = "detail-poster" src={selectedMovie.poster}></img>
-            </div>
+            <div id ="description">
             <p>{selectedMovie.description}</p>
-            <button id = "close-button" onClick = {handleButtonClick}>X</button>
+            
+            </div>
+            </div>
         </div>
+        <button id = "close-button" onClick = {handleButtonClick}>X</button>
         <div>
             <h3>Add to List</h3>
-            <form onSubmit={handleSubmit}>
+            <form  onSubmit={handleSubmit}>
             <select id = "dropdown" defaultValue="" onChange={handleSelect}>
                 <option selected="selected">Please select...</option>
                 <option value="4">Favourite Movies</option>
@@ -51,10 +55,12 @@ return (
                 <option value="6">Movies for the kids</option>
 
             </select>
-            <input type="submit" name="submit" value="Save" />
+            {/* <input type="submit" name="submit" value="Save" /> */}
+            <button id= "save-button" onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
             </form>
+            {/* <button onClick={handleMovieDelete}>Delete</button> */}
 
-            {/* <button onClick = {handleWatchedStatus}>Watched</button> */}
+            {/* <button onClick = {handleWatchButton}>Watched</button> */}
 
 
         </div>
