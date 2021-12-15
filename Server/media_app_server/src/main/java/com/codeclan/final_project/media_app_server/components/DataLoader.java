@@ -220,116 +220,116 @@ public class DataLoader implements ApplicationRunner {
 
 
         // SAVEDMOVIES
-        SavedMovie savedMovie101 = new SavedMovie(redNotice, recommendedMovies, true);
+        SavedMovie savedMovie101 = new SavedMovie(redNotice, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie101);
 
-        SavedMovie savedMovie102 = new SavedMovie(freeGuy, recommendedMovies, true);
+        SavedMovie savedMovie102 = new SavedMovie(freeGuy, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie102);
 
-        SavedMovie savedMovie103 = new SavedMovie(suicideSquad, recommendedMovies, true);
+        SavedMovie savedMovie103 = new SavedMovie(suicideSquad, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie103);
 
-        SavedMovie savedMovie104 = new SavedMovie(mortalKombat, recommendedMovies, true);
+        SavedMovie savedMovie104 = new SavedMovie(mortalKombat, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie104);
 
-        SavedMovie savedMovie105 = new SavedMovie(jungleCruise, recommendedMovies, true);
+        SavedMovie savedMovie105 = new SavedMovie(jungleCruise, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie105);
 
-        SavedMovie savedMovie106 = new SavedMovie(annette, recommendedMovies, true);
+        SavedMovie savedMovie106 = new SavedMovie(annette, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie106);
 
-        SavedMovie savedMovie107 = new SavedMovie(amina, recommendedMovies, true);
+        SavedMovie savedMovie107 = new SavedMovie(amina, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie107);
 
-        SavedMovie savedMovie108 = new SavedMovie(finch, recommendedMovies, true);
+        SavedMovie savedMovie108 = new SavedMovie(finch, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie108);
 
-        SavedMovie savedMovie109 = new SavedMovie(eternals, recommendedMovies, true);
+        SavedMovie savedMovie109 = new SavedMovie(eternals, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie109);
 
-        SavedMovie savedMovie110 = new SavedMovie(powerOfTheDog, recommendedMovies, true);
+        SavedMovie savedMovie110 = new SavedMovie(powerOfTheDog, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie110);
 
-        SavedMovie savedMovie111 = new SavedMovie(totalRecall, recommendedMovies, true);
+        SavedMovie savedMovie111 = new SavedMovie(totalRecall, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie111);
 
-        SavedMovie savedMovie112 = new SavedMovie(lastActionHero, recommendedMovies, true);
+        SavedMovie savedMovie112 = new SavedMovie(lastActionHero, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie112);
 
-        SavedMovie savedMovie113 = new SavedMovie(runningMan, recommendedMovies, true);
+        SavedMovie savedMovie113 = new SavedMovie(runningMan, recommendedMovies, true, 0);
         savedMovieRepository.save(savedMovie113);
 
 
 
 
-        SavedMovie savedMovie201 = new SavedMovie(shangChi, recentlyAddedMovies, false);
+        SavedMovie savedMovie201 = new SavedMovie(shangChi, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie201);
 
-        SavedMovie savedMovie202 = new SavedMovie(armyOfThieves, recentlyAddedMovies, false);
+        SavedMovie savedMovie202 = new SavedMovie(armyOfThieves, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie202);
 
-        SavedMovie savedMovie203 = new SavedMovie(venom, recentlyAddedMovies, false);
+        SavedMovie savedMovie203 = new SavedMovie(venom, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie203);
 
-        SavedMovie savedMovie204 = new SavedMovie(lastDuel, recentlyAddedMovies, false);
+        SavedMovie savedMovie204 = new SavedMovie(lastDuel, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie204);
 
-        SavedMovie savedMovie205 = new SavedMovie(homeAlone, recentlyAddedMovies, false);
+        SavedMovie savedMovie205 = new SavedMovie(homeAlone, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie205);
 
-        SavedMovie savedMovie206 = new SavedMovie(spiderManHomecoming, recentlyAddedMovies, false);
+        SavedMovie savedMovie206 = new SavedMovie(spiderManHomecoming, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie206);
 
-        SavedMovie savedMovie207 = new SavedMovie(llantoMaldito, recentlyAddedMovies, false);
+        SavedMovie savedMovie207 = new SavedMovie(llantoMaldito, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie207);
 
-        SavedMovie savedMovie208 = new SavedMovie(singleAllTheWay, recentlyAddedMovies, false);
+        SavedMovie savedMovie208 = new SavedMovie(singleAllTheWay, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie208);
 
-        SavedMovie savedMovie209 = new SavedMovie(afterWeFell, recentlyAddedMovies, false);
+        SavedMovie savedMovie209 = new SavedMovie(afterWeFell, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie209);
 
-        SavedMovie savedMovie210 = new SavedMovie(neverBackDown, recentlyAddedMovies, false);
+        SavedMovie savedMovie210 = new SavedMovie(neverBackDown, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie210);
 
-        SavedMovie savedMovie211 = new SavedMovie(theTerminator, recentlyAddedMovies, false);
+        SavedMovie savedMovie211 = new SavedMovie(theTerminator, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie211);
 
-        SavedMovie savedMovie212 = new SavedMovie(terminator2, recentlyAddedMovies, false);
+        SavedMovie savedMovie212 = new SavedMovie(terminator2, recentlyAddedMovies, false, 0);
         savedMovieRepository.save(savedMovie212);
 
 
 
 
-        SavedMovie savedMovie301 = new SavedMovie(pawPatrol, familyFriendly,false);
+        SavedMovie savedMovie301 = new SavedMovie(pawPatrol, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie301);
 
-        SavedMovie savedMovie302 = new SavedMovie(addamsFamily, familyFriendly,false);
+        SavedMovie savedMovie302 = new SavedMovie(addamsFamily, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie302);
 
-        SavedMovie savedMovie303 = new SavedMovie(encanto, familyFriendly,false);
+        SavedMovie savedMovie303 = new SavedMovie(encanto, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie303);
 
-        SavedMovie savedMovie304 = new SavedMovie(clifford, familyFriendly,false);
+        SavedMovie savedMovie304 = new SavedMovie(clifford, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie304);
 
-        SavedMovie savedMovie305 = new SavedMovie(bossBaby, familyFriendly,false);
+        SavedMovie savedMovie305 = new SavedMovie(bossBaby, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie305);
 
 
-        SavedMovie savedMovie306 = new SavedMovie(homeAlone, familyFriendly,false);
+        SavedMovie savedMovie306 = new SavedMovie(homeAlone, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie306);
 
-        SavedMovie savedMovie307 = new SavedMovie(mixedTape, familyFriendly,false);
+        SavedMovie savedMovie307 = new SavedMovie(mixedTape, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie307);
 
-        SavedMovie savedMovie308 = new SavedMovie(raya, familyFriendly,false);
+        SavedMovie savedMovie308 = new SavedMovie(raya, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie308);
 
-        SavedMovie savedMovie309 = new SavedMovie(frozen, familyFriendly,false);
+        SavedMovie savedMovie309 = new SavedMovie(frozen, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie309);
 
-        SavedMovie savedMovie310 = new SavedMovie(frozen2, familyFriendly,false);
+        SavedMovie savedMovie310 = new SavedMovie(frozen2, familyFriendly,false, 0);
         savedMovieRepository.save(savedMovie310);
 
 //        SavedMovie savedMovie1001 = new SavedMovie(redNotice, favouriteMovies, true);

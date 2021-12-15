@@ -72,6 +72,21 @@ const onWatchedButtonClick = (selectedMovieId) => {
     }
 }
 
+const onStarRatingClick = (selectedMovieId, newRating) => {
+    console.log(selectedMovie);
+    for (let savedMovie of savedMovies){
+        if(savedMovie.movie.id === selectedMovieId){
+            savedMovie.rating = newRating;
+            console.log(savedMovie);
+            const request = new Request();
+            request.patch('/api/savedMovies/{id}', savedMovie)
+            .then(setViewUserLists(true))
+            .then(window.location.href = "http://localhost:3000/");
+            
+        }
+    }
+}
+
 
 
 const handleAddToListSubmit = (selectedMovie, selectedList) => {
@@ -92,14 +107,14 @@ if(viewUserLists){
     return(
         <>
         {viewUserLists? <UserCuratedList onMovieClick={onMovieClick} handleViewChange={handleUserViewChange} savedMovies={savedMovies} viewUserLists={viewUserLists}/>: null}
-        {selectedMovie ? <UserMovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <UserMovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} onWatchedButtonClick={onWatchedButtonClick} onStarRatingClick={onStarRatingClick} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 } else {
     return(
         <>
         {list1 && list2 && list3? <CuratedList onMovieClick={onMovieClick} savedMovies={savedMovies} handleViewChange={handleUserViewChange} list1={list1} list2={list2} list3={list3} viewUserLists={viewUserLists}/>: null}
-        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} onWatchedButtonClick={onWatchedButtonClick} list1={list1} list2={list2} list3={list3}/> : null}
+        {selectedMovie ? <MovieDetail onButtonClick= {onButtonClick} selectedMovie={selectedMovie} handleAddToListSubmit={handleAddToListSubmit} onWatchedButtonClick={onWatchedButtonClick} onStarRatingClick={onStarRatingClick} list1={list1} list2={list2} list3={list3}/> : null}
         </> 
     )
 }

@@ -27,10 +27,14 @@ public class SavedMovie {
     @Column(name = "watched")
     private boolean watched;
 
-    public SavedMovie(Movie movie, MovieList movieList, boolean watched) {
+    @Column(name = "rating")
+    private int rating;
+
+    public SavedMovie(Movie movie, MovieList movieList, boolean watched, int rating) {
         this.movie = movie;
         this.movieList = movieList;
         this.watched = watched;
+        this.rating = rating;
     }
 
     public SavedMovie(){
@@ -67,5 +71,13 @@ public class SavedMovie {
 
     public void setWatched(boolean watched) {
         this.watched = watched;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

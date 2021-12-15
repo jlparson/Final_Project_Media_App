@@ -13,13 +13,13 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
     if(savedMovies){
         savedMovies.map((savedMovieObject) => {
             if(savedMovieObject.movieList.listName == "Favourite movies"){
-                familyFriendly.push({"movie": savedMovieObject, "watched": savedMovieObject.watched});
+                familyFriendly.push({"movie": savedMovieObject, "watched": savedMovieObject.watched, "rating": savedMovieObject.rating});
             }
             if(savedMovieObject.movieList.listName == "Movies to watch later"){
-                recommended.push({"movie": savedMovieObject, "watched": savedMovieObject.watched});
+                recommended.push({"movie": savedMovieObject, "watched": savedMovieObject.watched, "rating": savedMovieObject.rating});
             }
             if(savedMovieObject.movieList.listName == "Movies to watch with the kids"){
-                recentlyAdded.push({"movie": savedMovieObject, "watched": savedMovieObject.watched});
+                recentlyAdded.push({"movie": savedMovieObject, "watched": savedMovieObject.watched, "rating": savedMovieObject.rating});
             }
         })
         curatedList1 = recentlyAdded.map((savedMovieObject, index) => {
@@ -27,7 +27,7 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched}/>
+                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched} rating={savedMovieObject.rating} />
                 </div>
                 </li>
             )
@@ -37,7 +37,7 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
                 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched}/>
+                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched} rating={savedMovieObject.rating} />
                 </div>
                 </li>
             )
@@ -47,7 +47,7 @@ const UserCuratedList = ({onMovieClick, onButtonClick, handleViewChange, viewUse
                 
                 <li   key={index} className="list-item">
                 <div className="list-item">
-                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched}/>
+                <UserMovie movie={savedMovieObject.movie.movie} onMovieClick={onMovieClick} watched={savedMovieObject.watched} rating={savedMovieObject.rating} />
                 </div>
                 </li>
             )
