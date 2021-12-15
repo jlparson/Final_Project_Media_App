@@ -13,14 +13,22 @@ const UserMovie = ({movie, onMovieClick, watched}) => {
         return <p>Can't find movie...</p>
     }
 
-    
-    return(
-        <>
-            
+    if(watched == false){
+        return(
+            <>
             <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
-            <p>Watched: {watched.toString()}</p>
-        </>
-    )
+            <p><b><center>Watched: &#10060;</center></b></p>
+            </>
+        )
+    } else {
+        return(
+            <>
+            <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
+            <p><b><center>Watched: &#x2705;</center></b></p>
+            </>
+        )
+    }
+
 }
 
 export default UserMovie;
