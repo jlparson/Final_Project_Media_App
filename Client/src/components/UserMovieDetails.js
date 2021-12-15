@@ -3,7 +3,7 @@ import "./css/MovieDetail.css";
 
 
 
-const MovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick}) => {
+const UserMovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick}) => {
 
 const [selectedList, setSelectedList] = useState(null);
 
@@ -20,27 +20,24 @@ const handleButtonClick = function(){
     onButtonClick()
 }
 
-// const handleWatchButton = function(){
-//     onWatchedButtonClick(selectedMovie.id)
-// }
+const handleWatchButton = function(){
+    onWatchedButtonClick(selectedMovie.id)
+}
 
 return (
         <>
         <div id ="detail-popup-box">
         <div>
-            <h3>{selectedMovie.title}</h3>
-            <div id = "descrip-poster">
+            <p>{selectedMovie.title}</p>
+            <div id ="descript-poster">
             <img id = "detail-poster" src={selectedMovie.poster}></img>
-            <div id ="description">
+            </div>
             <p>{selectedMovie.description}</p>
-            
-            </div>
-            </div>
+            <button id = "close-button" onClick = {handleButtonClick}>X</button>
         </div>
-        <button id = "close-button" onClick = {handleButtonClick}>X</button>
         <div>
             <h3>Add to List</h3>
-            <form  onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
             <select id = "dropdown" defaultValue="" onChange={handleSelect}>
                 <option selected="selected">Please select...</option>
                 <option value="4">Favourite Movies</option>
@@ -48,11 +45,10 @@ return (
                 <option value="6">Movies for the kids</option>
 
             </select>
-            <input id= "save-button" type="submit" name="submit" value="Save" />
             <button onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
             </form>
 
-            {/* <button onClick = {handleWatchButton}>Watched</button> */}
+            <button onClick = {handleWatchButton}>Watched</button>
 
 
         </div>
@@ -63,4 +59,4 @@ return (
 };
 
 
-export default MovieDetail;
+export default UserMovieDetail;
