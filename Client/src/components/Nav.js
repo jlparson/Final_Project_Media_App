@@ -23,7 +23,7 @@ function Nav() {
                 alt="Getflix Logo"
             />
 
-            <a className="nav_myLists" href="/MyLists">My Lists</a>
+            {/* <a className="nav_myLists" href="/MyLists">My Lists</a> */}
 
             <img
                 className="nav_avatar"
@@ -34,4 +34,4 @@ function Nav() {
     )
 }
 
-export default Nav
+export default Nav;
