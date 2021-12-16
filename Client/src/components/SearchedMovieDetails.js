@@ -1,6 +1,7 @@
 
 
 import React, { useState } from 'react';
+import "./css/MovieDetail.css";
 
 
 
@@ -25,9 +26,8 @@ const handleSubmit = function(event){
         <>
         <div>
             <p>{searchedMovie.title}</p>
-            <div id ="descript-poster">
-            <button    onClick = {onSearchbarCloseButtonClick}>Close</button>
-            <img id = "detail-poster" src={searchedMovie.poster}></img>
+            <div class ="descrip-poster">
+            <img class = "detail-poster" src={searchedMovie.poster}></img>
             </div>
             <p>{searchedMovie.description}</p>
             
@@ -35,15 +35,17 @@ const handleSubmit = function(event){
         <div>
             <h3>Add to List</h3>
             <form onSubmit={handleSubmit}>
-            <select id = "dropdown" defaultValue="" onChange={handleSelect}>
+            <select class = "dropdown" defaultValue="" onChange={handleSelect}>
                 <option selected="selected">Please select...</option>
                 <option value="4">Favourite Movies</option>
                 <option value="5">Watch Later</option>
                 <option value="6">Movies for the kids</option>
 
             </select>
-            <button id= "save-button" onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
+            <button class= "save-button" onClick={() => window.location.reload(false)}  type="submit" name="submit" value="Save">Save</button>
             </form> 
+            <button  id ="close-search" onClick = {onSearchbarCloseButtonClick}>Close</button>
+
             
 
 
