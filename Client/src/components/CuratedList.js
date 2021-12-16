@@ -1,6 +1,7 @@
 import React from "react";
 import Movie from "./Movie";
 import "./css/MovieList.css";
+import "./css/MovieListButton.css"
 import MovieDetail from "./MovieDetails";
 const CuratedList = ({list1, list2, list3, onMovieClick, onButtonClick, handleViewChange, viewUserLists, savedMovies}) => {
     const curatedList1 = list1.map((movie, index) => {
@@ -54,7 +55,7 @@ const CuratedList = ({list1, list2, list3, onMovieClick, onButtonClick, handleVi
             return(
                 <>
                 <br></br><br></br><br></br>
-                <button onClick={setUserView}>My List</button>
+                <button class="user-button" onClick={setUserView}>My List</button>
                 <h2>Recommended</h2>
                 <ul>{curatedList1}</ul>
                 <h2>Recently Added</h2>

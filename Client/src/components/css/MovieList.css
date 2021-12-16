@@ -9,6 +9,7 @@ li{
 h2{
     padding-left: 40px;
     margin-bottom: -40px;
+    margin-top: 50px;
 }
 
 
@@ -49,6 +50,8 @@ ul::-webkit-scrollbar{
     /* color: #fff; */
     text-decoration: none;
     margin-bottom: 20px;
+    margin-top: 20px;
+    z-index: 1;
 }
 
 
