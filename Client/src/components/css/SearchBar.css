@@ -1,0 +1,23 @@
+
+
+
+
+.searchInputs{
+    margin-top: 0px;
+    display: flex center;
+    margin-left: 200px;
+
+}
+
+.search input{
+    display: flexbox;
+    background-color:white;
+    font-size: 18px;
+    padding: 15px;
+}
+
+.searchButton{
+    margin-top: 0px;
+    display: flexbox ;
+    
+}

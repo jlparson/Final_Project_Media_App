@@ -20,6 +20,14 @@ public class MovieListController {
     @Autowired
     MovieRepository movieRepository;
 
+    @GetMapping(value = "/movieLists/search/{movieName}" )
+
+    public ResponseEntity<Movie>searchForMovie(@PathVariable String movieName) {
+
+        return new ResponseEntity(movieRepository.searchByTitle(movieName), HttpStatus.OK);
+    }
+//    public ResponseEntity getMovie(@PathVariable )
+
     @GetMapping(value = "/movieLists")
     public ResponseEntity<List<MovieList>> getMovieList(){
         return new ResponseEntity<>(movieListRepository.findAll(), HttpStatus.OK);
@@ -54,4 +62,7 @@ public class MovieListController {
         movieListRepository.delete(found);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
+
+
+
 }

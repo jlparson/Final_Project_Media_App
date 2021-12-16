@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Component } from 'react/cjs/react.production.min';
 import "./css/Nav.css";
+import SearchBar from './SearchBar';
+import "./css/SearchBar.css"
+import MovieSource from './MovieSource'
+import Request from '../helpers/request';
 
-function Nav() {
+
+function Nav(props) {
     const [show, handleShow] = useState(false);
+    const [searchedMovie, setSearchMovie] = useState(null)
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -15,6 +22,16 @@ function Nav() {
         }
     }, []);
 
+    const onSearch= async(text) => {
+
+        const request = new  Request(); 
+        request.get("/api/movieLists/search/"+text)
+        .then(response => props.onSearchMovie(response))
+    
+    } 
+
+
+      
     return (
         <div className={`nav ${show && "nav_background"}`}>
             <img
@@ -24,6 +41,12 @@ function Nav() {
             />
 
             {/* <a className="nav_myLists" href="/MyLists">My Lists</a> */}
+            <div className="SerchBar" id="SerchBar"> <SearchBar  onSearch={onSearch}/>   
+        
+            </div>
+          
+
+            <a className="nav_myLists" href="/MyLists">My Lists</a>
 
             <img
                 className="nav_avatar"
