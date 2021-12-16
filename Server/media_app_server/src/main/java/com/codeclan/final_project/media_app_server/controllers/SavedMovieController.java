@@ -55,7 +55,7 @@ public class SavedMovieController {
         if(foundList.isPresent()){
             list = foundList.get();
         }
-        SavedMovie savedMovie = new SavedMovie(movie, list, false );
+        SavedMovie savedMovie = new SavedMovie(movie, list, false, 0);
         savedMovieRepository.save(savedMovie);
         return new ResponseEntity<>(savedMovie, HttpStatus.CREATED);
 

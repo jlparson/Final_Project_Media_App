@@ -4,9 +4,10 @@ import Youtube from "react-youtube";
 
 
 
-const UserMovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick, handleDeleteFromList}) => {
+const UserMovieDetail = ({selectedMovie, handleAddToListSubmit, list1, list2, list3, onButtonClick, onWatchedButtonClick, handleDeleteFromList, onStarRatingClick}) => {
 
 const [selectedList, setSelectedList] = useState(null);
+const [rating, setRating] = useState();
 
 const handleSelect = function(event){
     setSelectedList(event.target.value)
@@ -23,6 +24,10 @@ const handleButtonClick = function(){
 
 const handleWatchButton = function(){
     onWatchedButtonClick(selectedMovie.id)
+}
+
+const handleStarRatingButton = function(){
+    onStarRatingClick(selectedMovie.id)
 }
 
 const handleMovieDelete = function(event){
@@ -79,7 +84,8 @@ return (
             
             <button  id = "delete-button" onClick={handleMovieDelete} >Delete</button>
 
-            <button onClick = {handleWatchButton} >Watched</button>
+            <button onClick = {handleWatchButton}>Watched</button>
+            
 
 
 

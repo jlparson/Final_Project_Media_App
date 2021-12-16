@@ -93,9 +93,9 @@ const onWatchedButtonClick = (selectedMovieId) => {
             savedMovie.watched = !savedMovie.watched;
             console.log(savedMovie);
             const request = new Request();
-            request.patch('/api/savedMovies/{id}', savedMovie)
+            request.patch('/api/savedMovies/{selectedMovieId}', savedMovie)
             .then(setViewUserLists(true))
-            .then(window.location.href = "http://localhost:3000/");
+            // .then(window.location.href = "http://localhost:3000/");
             
         }
     }
@@ -108,7 +108,6 @@ const onSavedMovieClick = (savedMovie) => {
 }
 
 const handleAddToListSubmit = (selectedMovie, selectedList) => {
-    
     const movieid = selectedMovie.id;
     const listid = selectedList;
     console.log(movieid, listid);
