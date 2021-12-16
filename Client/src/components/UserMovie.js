@@ -15,8 +15,9 @@ const UserMovie = ({movie, onMovieClick, watched, rating, savedMovie}) => {
 
     const handleRating = (rating) => {
         const request = new Request();
-        savedMovie.rating = rating;
-        request.patch(`http://localhost:8080/api/savedMovies/1`, savedMovie);
+        savedMovie.movie.rating = rating;
+        console.log();
+        request.patch('/api/savedMovies/'+ savedMovie.movie.id, savedMovie.movie);
     }
 
 
@@ -29,8 +30,8 @@ const UserMovie = ({movie, onMovieClick, watched, rating, savedMovie}) => {
             <>
             <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
             <p><b><center>Watched: &#10060;</center></b></p>
-            <p>Rating: {rating}</p>
-            <StarRating onRate={handleRating} />
+            <p>Rating: {savedMovie.movie.rating}</p>
+            <StarRating onRate={handleRating} ratingProp={savedMovie.movie.rating}/>
             </>
         )
     } else {
@@ -38,7 +39,7 @@ const UserMovie = ({movie, onMovieClick, watched, rating, savedMovie}) => {
             <>
             <img onClick={handleClick} id = "poster" src={movie.poster}  alt="movie poster" />
             <p><b><center>Watched: &#x2705;</center></b></p>
-            <StarRating onRate={handleRating} />
+            <StarRating onRate={handleRating} ratingProp={savedMovie.movie.rating}/>
             </>
         )
     }

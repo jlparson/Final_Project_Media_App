@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import "./css/StarRating.css"
 
-const StarRating = ({onRate}) => {
+const StarRating = ({onRate, ratingProp}) => {
 
-    const [rating, setRating] = useState(null);
+    const [rating, setRating] = useState(ratingProp);
     const [hover, setHover] = useState(null);
 
     const setStarRating = (event) => {
