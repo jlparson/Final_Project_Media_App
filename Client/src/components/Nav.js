@@ -46,7 +46,7 @@ function Nav(props) {
             </div>
           
 
-            <a className="nav_myLists" href="/MyLists">My Lists</a>
+            {/* <a className="nav_myLists" href="/MyLists">My Lists</a> */}
 
             <img
                 className="nav_avatar"

@@ -6,6 +6,10 @@ li{
     
 }
 
+h2{
+    padding-left: 40px;
+    margin-bottom: -40px;
+}
 
 
 ul {
@@ -35,6 +39,20 @@ ul::-webkit-scrollbar{
     
     
 }
+
+.user-button{
+    /* position: bottom; */
+    position: fixed;
+    object-fit: contain;
+    left: 40px;
+    /* right: 100px; */
+    /* color: #fff; */
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+
+
 
 .detail-poster{
     width:100px;
